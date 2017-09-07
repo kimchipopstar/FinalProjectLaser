@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D791CE61F5F9DC000656D7B /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4D791CE51F5F9DC000656D7B /* MainMenu.sks */; };
+		4D791CE81F5F9FCA00656D7B /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D791CE71F5F9FCA00656D7B /* MainMenu.swift */; };
+		4D791CEA1F61505F00656D7B /* Elektronomia - Sky High.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */; };
 		4DBDB5CE1F5F676E007014D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBDB5CD1F5F676E007014D8 /* AppDelegate.swift */; };
 		4DBDB5D01F5F676E007014D8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5CF1F5F676E007014D8 /* GameScene.sks */; };
 		4DBDB5D21F5F676E007014D8 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5D11F5F676E007014D8 /* Actions.sks */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D791CE51F5F9DC000656D7B /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
+		4D791CE71F5F9FCA00656D7B /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Elektronomia - Sky High.mp3"; sourceTree = "<group>"; };
 		4DBDB5CA1F5F676E007014D8 /* FinalProjectLaser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProjectLaser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBDB5CD1F5F676E007014D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DBDB5CF1F5F676E007014D8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -60,12 +66,15 @@
 		4DBDB5CC1F5F676E007014D8 /* FinalProjectLaser */ = {
 			isa = PBXGroup;
 			children = (
-				4DBDB5CD1F5F676E007014D8 /* AppDelegate.swift */,
 				4DBDB5CF1F5F676E007014D8 /* GameScene.sks */,
-				4DBDB5D11F5F676E007014D8 /* Actions.sks */,
 				4DBDB5D31F5F676E007014D8 /* GameScene.swift */,
+				4D791CE51F5F9DC000656D7B /* MainMenu.sks */,
+				4D791CE71F5F9FCA00656D7B /* MainMenu.swift */,
 				4DBDB5D51F5F676E007014D8 /* GameViewController.swift */,
+				4DBDB5D11F5F676E007014D8 /* Actions.sks */,
 				4DBDB5D71F5F676E007014D8 /* Main.storyboard */,
+				4DBDB5CD1F5F676E007014D8 /* AppDelegate.swift */,
+				4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */,
 				4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */,
 				4DBDB5DC1F5F676E007014D8 /* LaunchScreen.storyboard */,
 				4DBDB5DF1F5F676E007014D8 /* Info.plist */,
@@ -134,8 +143,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */,
+				4D791CE61F5F9DC000656D7B /* MainMenu.sks in Resources */,
 				4DBDB5D01F5F676E007014D8 /* GameScene.sks in Resources */,
 				4DBDB5DB1F5F676E007014D8 /* Assets.xcassets in Resources */,
+				4D791CEA1F61505F00656D7B /* Elektronomia - Sky High.mp3 in Resources */,
 				4DBDB5DE1F5F676E007014D8 /* LaunchScreen.storyboard in Resources */,
 				4DBDB5D21F5F676E007014D8 /* Actions.sks in Resources */,
 			);
@@ -151,6 +162,7 @@
 				4DBDB5D41F5F676E007014D8 /* GameScene.swift in Sources */,
 				4DBDB5D61F5F676E007014D8 /* GameViewController.swift in Sources */,
 				4DBDB5CE1F5F676E007014D8 /* AppDelegate.swift in Sources */,
+				4D791CE81F5F9FCA00656D7B /* MainMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +291,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaewonkim.FinalProjectLaser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -292,6 +305,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaewonkim.FinalProjectLaser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -314,6 +328,7 @@
 				4DBDB5E41F5F676E007014D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
