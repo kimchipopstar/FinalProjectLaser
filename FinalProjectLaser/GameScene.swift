@@ -21,6 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var bulletUp:SKSpriteNode?
     var leftButton:SKSpriteNode?
     var leftLaser:SKSpriteNode?
+    var leftModel:SKSpriteNode?
 }
 
 extension GameScene{
@@ -38,6 +39,13 @@ extension GameScene{
         bulletupSetup()
         leftBulletSetUp()
         leftLasersSetUp()
+        leftModelSetUp()
+        laserInitialPosition()
+        
+        
+        let laserDestination:CGPoint = CGPoint(x: -(self.frame.width / 2), y: -(self.frame.height / 2))
+        let moveLaserAction:SKAction = SKAction.move(to: laserDestination, duration: 3)
+        leftModel?.run(moveLaserAction)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -93,6 +101,11 @@ extension GameScene{
         leftLaser?.physicsBody?.isDynamic = true
     }
     
+    func leftModelSetUp()
+    {
+        leftModel = self.childNode(withName: "leftModel") as? SKSpriteNode
+    }
+    
 
 }
 
@@ -132,8 +145,12 @@ extension GameScene{
 
 }
 
-//MARK: - background function
+//MARK: - functions
 extension GameScene {
+    
+    func laserInitialPosition(){
+        leftModel?.position = CGPoint(x: (-self.frame.width / 2) + ((leftModel?.frame.width)! / 2), y: (self.frame.height / 2) + ((leftModel?.frame.height)!/2))
+    }
     
     func setBackgroundMusic(atScene:SKScene, fileName:String)
     {
