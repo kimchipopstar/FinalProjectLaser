@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import Foundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     //MAKR: - Categories
