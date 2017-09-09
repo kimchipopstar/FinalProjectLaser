@@ -31,7 +31,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var laserHub:SKSpriteNode?
     var laserBeam:SKSpriteNode?
     
-    var Hero = SKSpriteNode(imageNamed: “Laser”)
+    var Hero = SKSpriteNode(imageNamed: "Laser")
     var background = SKSpriteNode()
 }
 
@@ -47,8 +47,8 @@ extension GameScene{
         
         //node set up functions
 //        leftButtonSetUp()
-        bulletupSetup()
-        leftBulletSetUp()
+//        bulletupSetup()
+//        leftBulletSetUp()
 //        leftLasersSetUp()
 //        leftModelSetUp()
         laserHubSetUp()
@@ -61,12 +61,30 @@ extension GameScene{
 //        laserHub?.run(moveLaserAction)
         
 //        leftModel?.run(moveLaserAction)
+        
+        let border = self.childNode(withName: "BorderSprite")
+        
+        Hero.size = CGSize(width: 200, height: 200)
+        Hero.position = CGPoint(x: 0, y: -600)
+        Hero.zPosition = 2
+        
+        self.addChild(Hero)
+        
+        createBackgrounds()
+        
+        
+        let borderFrame = SKPhysicsBody(edgeLoopFrom: (border?.frame)!)
+        borderFrame.friction = 0
+        borderFrame.restitution = 1
+        self.physicsBody = borderFrame
+        
+        
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    }
-    
     override func update(_ currentTime: TimeInterval) {
+        
+        moveBackgrounds()
+        
+        removeExessProjectiles()
     }
 }
 
@@ -90,7 +108,7 @@ extension GameScene{
     {
         laserBeam = SKSpriteNode(imageNamed: "LaserBeam")
         laserBeam?.setScale(1.5)
-        laserBeam?.position = CGPoint(x: -(self.frame.width / 2) - (laserBeam.frame.width / 2), y: (self.frame.height / 2) - (laserBeam?.frame.height / 2))
+//        laserBeam?.position = CGPoint(x: -(self.frame.width / 2) - (laserBeam.frame.width / 2), y: (self.frame.height / 2) - (laserBeam?.frame.height / 2))
         
         
         laserHub?.addChild(laserBeam!)
@@ -102,29 +120,29 @@ extension GameScene{
 //        laserBeam?.physicsBody?.isDynamic = true
     }
     
-    func leftBulletSetUp()
-    {
-        bulletLeft = self.childNode(withName: "bulletLeft") as? SKSpriteNode
-        bulletLeft?.physicsBody?.categoryBitMask = bulletLeftCategory
-        bulletLeft?.physicsBody?.collisionBitMask = noCategory
-        bulletLeft?.physicsBody?.contactTestBitMask = laserHubCategory
-        //        bulletLeft?.physicsBody = SKPhysicsBody(rectangleOf: (bulletLeft?.size)!)
-//        bulletLeft?.physicsBody?.affectedByGravity = false
-//        bulletLeft?.physicsBody?.isDynamic = true
-        bulletLeft?.physicsBody?.velocity = CGVector(dx: -100, dy: 0)
-    }
+//    func leftBulletSetUp()
+//    {
+//        bulletLeft = self.childNode(withName: "bulletLeft") as? SKSpriteNode
+//        bulletLeft?.physicsBody?.categoryBitMask = bulletLeftCategory
+//        bulletLeft?.physicsBody?.collisionBitMask = noCategory
+//        bulletLeft?.physicsBody?.contactTestBitMask = laserHubCategory
+//        //        bulletLeft?.physicsBody = SKPhysicsBody(rectangleOf: (bulletLeft?.size)!)
+////        bulletLeft?.physicsBody?.affectedByGravity = false
+////        bulletLeft?.physicsBody?.isDynamic = true
+//        bulletLeft?.physicsBody?.velocity = CGVector(dx: -100, dy: 0)
+    //}
     
-    func bulletupSetup()
-    {
-        bulletUp = self.childNode(withName: "bulletUp") as? SKSpriteNode
-        bulletUp?.physicsBody?.categoryBitMask = bulletUpCategory
-        bulletUp?.physicsBody?.collisionBitMask = noCategory
-        bulletUp?.physicsBody?.contactTestBitMask = laserBeamCategory
-        //        bulletUp?.physicsBody = SKPhysicsBody(rectangleOf: (bulletUp?.size)!)
-        bulletUp?.physicsBody?.affectedByGravity = false
-        bulletUp?.physicsBody?.isDynamic = true
-        bulletUp?.physicsBody?.velocity = CGVector(dx: 0, dy: 200)
-    }
+//    func bulletupSetup()
+//    {
+//        bulletUp = self.childNode(withName: "bulletUp") as? SKSpriteNode
+//        bulletUp?.physicsBody?.categoryBitMask = bulletUpCategory
+//        bulletUp?.physicsBody?.collisionBitMask = noCategory
+//        bulletUp?.physicsBody?.contactTestBitMask = laserBeamCategory
+//        //        bulletUp?.physicsBody = SKPhysicsBody(rectangleOf: (bulletUp?.size)!)
+//        bulletUp?.physicsBody?.affectedByGravity = false
+//        bulletUp?.physicsBody?.isDynamic = true
+//        bulletUp?.physicsBody?.velocity = CGVector(dx: 0, dy: 200)
+   // }
     
 //    func leftButtonSetUp()
 //    {
@@ -203,6 +221,77 @@ extension GameScene {
         let bgm:SKAudioNode = SKAudioNode(fileNamed: fileName)
         bgm.autoplayLooped = true
         atScene.addChild(bgm)
+    }
+    
+    func removeExessProjectiles() {
+        
+        for temp in self.children {
+            if temp.name == "SmallBall" && temp.position.y < -600 {
+                temp.removeFromParent()
+                print(temp.position.y)
+            }
+        }
+    }
+    
+    func createBackgrounds() {
+        
+        for i in 0...3 {
+            
+            let background = SKSpriteNode(imageNamed: "LaserTunnel")
+            background.name = "Background"
+            background.size = CGSize(width: (self.scene?.size.width)!, height: 1000)
+            background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            background.position = CGPoint(x: 0, y: CGFloat(i) * background.size.height)
+            background.zPosition = 0
+            
+            self.addChild(background)
+        }
+    }
+    
+    func moveBackgrounds() {
+        
+        self.enumerateChildNodes(withName:"Background")
+            {
+                (node, error) in
+                
+                node.position.y -= 3
+                
+                if node.position.y < -((self.scene?.size.height)!)
+                {
+                    node.position.y += (self.scene?.size.height)! * 3
+                }
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        for touch in (touches ) {
+            let location = touch.location(in: self)
+            
+            let SmallBall = SKSpriteNode(imageNamed: "Projectile1")
+            SmallBall.position = Hero.position
+            SmallBall.size = CGSize(width: 30, height: 30)
+            SmallBall.physicsBody = SKPhysicsBody(circleOfRadius: SmallBall.size.width / 2)
+            SmallBall.physicsBody?.affectedByGravity = true
+            SmallBall.zPosition = 1
+            SmallBall.name = "SmallBall"
+            
+            self.addChild(SmallBall)
+            
+            var dx = CGFloat(location.x - Hero.position.x)
+            var dy = CGFloat(location.y - Hero.position.y)
+            
+            let magnitude = sqrt(dx * dx + dy * dy)
+            
+            dx /= magnitude
+            dy /= magnitude
+            
+            let vector = CGVector(dx: 60.0 * dx, dy: 60.0 * dy)
+            
+            
+            SmallBall.physicsBody?.applyImpulse(vector)
+            
+        }
     }
     
 }
