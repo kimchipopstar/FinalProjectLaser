@@ -54,7 +54,7 @@ extension GameScene{
         
         Hero.size = CGSize(width: 200, height: 200)
         Hero.position = CGPoint(x: 0, y: -600)
-        Hero.zPosition = 2
+        Hero.zPosition = 4
         
         self.addChild(Hero)
         
@@ -85,7 +85,7 @@ extension GameScene{
             SmallBall.size = CGSize(width: 30, height: 30)
             SmallBall.physicsBody = SKPhysicsBody(circleOfRadius: SmallBall.size.width / 2)
             SmallBall.physicsBody?.affectedByGravity = true
-            SmallBall.zPosition = 1
+            SmallBall.zPosition = 3
             SmallBall.name = "SmallBall"
             
             self.addChild(SmallBall)
@@ -112,7 +112,9 @@ extension GameScene{
     func laserHubSetUp()
     {
         laserHub = SKSpriteNode(imageNamed: "LaserHub")
+        laserHub?.zPosition = 1
         laserHub?.setScale(0.5)
+        laserHub?.position = CGPoint(x: -320, y: 0)
         self.addChild(laserHub!)
 //        laserHub = self.childNode(withName: "laserHub") as? SKSpriteNode
 //        laserHub?.physicsBody?.categoryBitMask = laserHubCategory
@@ -125,7 +127,9 @@ extension GameScene{
     func laserBeamSetUp()
     {
         laserBeam = SKSpriteNode(imageNamed: "LaserBeam")
-        laserBeam?.setScale(1.5)
+        laserBeam?.zPosition = 2
+        laserBeam?.size.width = 1250
+        laserBeam?.position = CGPoint(x: 650, y: 80)
         laserHub?.addChild(laserBeam!)
 //        laserBeam = self.childNode(withName: "laserHub")?.childNode(withName: "laserBeam") as? SKSpriteNode
 //        laserBeam?.physicsBody?.categoryBitMask = laserBeamCategory
