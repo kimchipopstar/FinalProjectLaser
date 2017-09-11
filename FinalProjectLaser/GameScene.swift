@@ -29,7 +29,6 @@ extension GameScene{
         view.showsPhysics = true
         
         //node set up functions
-//        laser.setUp(hubTexture: "laserHub", beamTextrue: "laserBeam")
         laser.laserSetUp()
         self.addChild(laser.laserHub)
         laser.laserHub.addChild(laser.laserBeam)
@@ -37,8 +36,6 @@ extension GameScene{
         hero.setUpHero()
         self.addChild(hero)
         
-//        laserHubSetUp()
-//        laserBeamSetUp()
 
 //        laserInitialPosition()
 //        
@@ -87,36 +84,46 @@ extension GameScene{
     
     func didBegin(_ contact: SKPhysicsContact)
     {
+        contactLogic(contact: contact)
+    }
+    
+    func contactLogic(contact:SKPhysicsContact)
+    {
         let categoryA:UInt32! = contact.bodyA.categoryBitMask
         let categoryB:UInt32! = contact.bodyB.categoryBitMask
         
         if categoryA == CategoryEnum.laserHubCategory.rawValue || categoryB == CategoryEnum.laserHubCategory.rawValue
         {
             laser.laserBeam.removeFromParent()
-//            laserBeam.removeFromParent()
+            //            laserBeam.removeFromParent()
             
             print("contactHub")
         }
         else if categoryA == CategoryEnum.laserBeamCategory.rawValue || categoryB == CategoryEnum.laserBeamCategory.rawValue
         {
-//            if ( categoryA != nil)
-//            {
+            
             let otherNode:SKSpriteNode
-            if categoryA == CategoryEnum.laserBeamCategory.rawValue {
+            if categoryA == CategoryEnum.laserBeamCategory.rawValue
+            {
                 otherNode = contact.bodyB.node as! SKSpriteNode
-                if otherNode.physicsBody?.categoryBitMask == CategoryEnum.smallBallCategory.rawValue {
-                    laserBeamContactBalls(with: otherNode)
-                }
-            } else{
-                otherNode = contact.bodyA.node as! SKSpriteNode
-                if otherNode.physicsBody?.categoryBitMask == CategoryEnum.smallBallCategory.rawValue {
+                if otherNode.physicsBody?.categoryBitMask == CategoryEnum.smallBallCategory.rawValue
+                {
                     laserBeamContactBalls(with: otherNode)
                 }
             }
-//            let otherNode:SKSpriteNode = (categoryA == laserBeamCategory) ? contact.bodyB.node as! SKSpriteNode : contact.bodyA.node as! SKSpriteNode
-//            laserBeamContactBalls(with: otherNode)
-//            print("contactLaser")
-//            }
+            else
+            {
+                otherNode = contact.bodyA.node as! SKSpriteNode
+                if otherNode.physicsBody?.categoryBitMask == CategoryEnum.smallBallCategory.rawValue
+                {
+                    laserBeamContactBalls(with: otherNode)
+                }
+            }
+            //            let otherNode:SKSpriteNode = (categoryA == laserBeamCategory) ? contact.bodyB.node as! SKSpriteNode : contact.bodyA.node as! SKSpriteNode
+            //            if otherNode.physicsBody?.categoryBitMask == smallBallCategory{
+            //                laserBeamContactBalls(with: otherNode)
+            //                print("contactLaser")
+            //                }
         }
     }
     
@@ -126,6 +133,8 @@ extension GameScene{
         other.removeFromParent()
     }
 }
+    
+
 
 //MARK: - functions
 extension GameScene {
