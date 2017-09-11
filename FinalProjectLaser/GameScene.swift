@@ -45,12 +45,11 @@ extension GameScene{
         laserBeamSetUp()
 
 //        laserInitialPosition()
-        
+//        
 //        let laserDestination:CGPoint = CGPoint(x: -(self.frame.width / 2), y: -(self.frame.height / 2))
-//        let moveLaserAction:SKAction = SKAction.move(to: laserDestination, duration: 3)
-//        laserHub?.run(moveLaserAction)
-        
-//        leftModel?.run(moveLaserAction)
+//        let moveLaserAction:SKAction = SKAction.move(to: laserDestination, duration: 10)
+//        laserHub.run(moveLaserAction)
+
         
         let border = self.childNode(withName: "BorderSprite")
         
@@ -93,7 +92,7 @@ extension GameScene{
             smallBall.zPosition = 3
             smallBall.name = "SmallBall"
             smallBall.physicsBody?.categoryBitMask = smallBallCategory
-            smallBall.physicsBody?.collisionBitMask  = noCategory
+//            smallBall.physicsBody?.collisionBitMask  = noCategory
             smallBall.physicsBody?.contactTestBitMask = laserBeamCategory | laserHubCategory
             
             self.addChild(smallBall)
