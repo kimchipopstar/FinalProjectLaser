@@ -12,7 +12,7 @@ import GameplayKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
 
     //MAKR: - node Properties
-    var background = SKSpriteNode()
+    var background:Background = Background()
     let hero:Hero = Hero(imageNamed: "Laser")
     let laser:Laser = Laser()
 }
@@ -46,7 +46,7 @@ extension GameScene{
         
         let border = self.childNode(withName: "BorderSprite")
         
-        createBackgrounds()
+        background.createBackgrounds(scene:self)
         
         let borderFrame = SKPhysicsBody(edgeLoopFrom: (border?.frame)!)
         borderFrame.friction = 0
@@ -56,7 +56,7 @@ extension GameScene{
     
     override func update(_ currentTime: TimeInterval) {
         
-        moveBackgrounds()
+        background.moveBackgrounds(scene:self)
         
         removeExessProjectiles()
     }
@@ -160,35 +160,7 @@ extension GameScene {
         }
     }
     
-    func createBackgrounds() {
-        
-        for i in 0...3 {
-            
-            let background = SKSpriteNode(imageNamed: "LaserTunnel")
-            background.name = "Background"
-            background.size = CGSize(width: (self.scene?.size.width)!, height: 1000)
-            background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-            background.position = CGPoint(x: 0, y: CGFloat(i) * background.size.height)
-            background.zPosition = 0
-            
-            self.addChild(background)
-        }
-    }
-    
-    func moveBackgrounds() {
-        
-        self.enumerateChildNodes(withName:"Background")
-        {
-            (node, error) in
-            
-            node.position.y -= 3
-            
-            if node.position.y < -((self.scene?.size.height)!)
-            {
-                node.position.y += (self.scene?.size.height)! * 3
-            }
-        }
-    }
+
     
 }
 
