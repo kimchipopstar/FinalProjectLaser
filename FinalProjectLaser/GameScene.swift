@@ -33,11 +33,12 @@ extension GameScene{
     
     override func didMove(to view: SKView) {
         
-        //Background Music
+//        Background Music
         setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
         
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
+        view.showsPhysics = true
         
         //node set up functions
         laserHubSetUp()
@@ -122,10 +123,10 @@ extension GameScene{
         laserHub.zPosition = 1
         laserHub.setScale(0.5)
         laserHub.position = CGPoint(x: -320, y: 0)
+        laserHub.physicsBody = SKPhysicsBody(texture: laserHubTexture, size:laserHub.size)
         laserHub.physicsBody?.categoryBitMask = laserHubCategory
         laserHub.physicsBody?.collisionBitMask = noCategory
         laserHub.physicsBody?.contactTestBitMask = smallBallCategory
-        laserHub.physicsBody = SKPhysicsBody(texture: laserHubTexture, size:laserHub.size)
         laserHub.physicsBody?.affectedByGravity = false
         laserHub.physicsBody?.isDynamic = false
         self.addChild(laserHub)
@@ -139,10 +140,10 @@ extension GameScene{
         laserBeam.zPosition = 2
         laserBeam.size.width = 1250
         laserBeam.position = CGPoint(x: 650, y: 80)
+        laserBeam.physicsBody = SKPhysicsBody(texture: laserBeamTexture, size: laserBeam.size)
         laserBeam.physicsBody?.categoryBitMask = laserBeamCategory
         laserBeam.physicsBody?.collisionBitMask = noCategory
         laserBeam.physicsBody?.contactTestBitMask = smallBallCategory | heroCategory
-        laserBeam.physicsBody = SKPhysicsBody(texture: laserBeamTexture, size: laserBeam.size)
         laserBeam.physicsBody?.affectedByGravity = false
         laserBeam.physicsBody?.isDynamic = false
         laserHub.addChild(laserBeam)
@@ -159,34 +160,27 @@ extension GameScene{
     
     func didBegin(_ contact: SKPhysicsContact)
     {
-        print("contact")
-
+        
         let categoryA:UInt32 = contact.bodyA.categoryBitMask
         let categoryB:UInt32 = contact.bodyB.categoryBitMask
         
-        if categoryA == smallBallCategory || categoryB == smallBallCategory
+        if categoryA == laserHubCategory || categoryB == laserHubCategory
         {
-            let otherNode:SKSpriteNode = (categoryA == smallBallCategory) ? contact.bodyB.node as! SKSpriteNode : contact.bodyA.node as! SKSpriteNode
-            bulletLeftDidHitButton(with: otherNode)
+            laserBeam.removeFromParent()
+            
             print("contactHub")
         }
         else if categoryA == laserBeamCategory || categoryB == laserBeamCategory
-            {
-                let otherNode:SKSpriteNode = (categoryA == laserBeamCategory) ? contact.bodyB.node as! SKSpriteNode : contact.bodyA.node as! SKSpriteNode
-                bulletUpDidHitLaser(with: otherNode)
-                print("contactLaser")
-            }
+        {
+            let otherNode:SKSpriteNode = (categoryA == laserBeamCategory) ? contact.bodyB.node as! SKSpriteNode : contact.bodyA.node as! SKSpriteNode
+            laserBeamContactBalls(with: otherNode)
+            print("contactLaser")
+        }
     }
     
     //helper functions
-    func bulletLeftDidHitButton(with other:SKSpriteNode)
-    {
-//        other.color = UIColor.brown
-        other.physicsBody?.isDynamic = false
-        laserBeam.removeFromParent()
-    }
     
-    func bulletUpDidHitLaser(with other:SKSpriteNode)
+    func laserBeamContactBalls(with other:SKSpriteNode)
     {
         other.removeFromParent()
     }
