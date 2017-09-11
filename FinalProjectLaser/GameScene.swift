@@ -84,7 +84,8 @@ extension GameScene{
         for touch in (touches ) {
             let location = touch.location(in: self)
             
-            smallBall = SKSpriteNode(imageNamed: "Projectile1")
+
+            smallBall = SKSpriteNode(imageNamed: "SoccerBall")
             smallBall.position = Hero.position
             smallBall.size = CGSize(width: 30, height: 30)
             smallBall.physicsBody = SKPhysicsBody(circleOfRadius: smallBall.size.width / 2)
@@ -92,7 +93,9 @@ extension GameScene{
             smallBall.zPosition = 3
             smallBall.name = "SmallBall"
             smallBall.physicsBody?.categoryBitMask = smallBallCategory
+
 //            smallBall.physicsBody?.collisionBitMask  = noCategory
+
             smallBall.physicsBody?.contactTestBitMask = laserBeamCategory | laserHubCategory
             
             self.addChild(smallBall)
@@ -129,8 +132,6 @@ extension GameScene{
         laserHub.physicsBody?.affectedByGravity = false
         laserHub.physicsBody?.isDynamic = false
         self.addChild(laserHub)
-
-
     }
     
     func laserBeamSetUp()
@@ -146,12 +147,7 @@ extension GameScene{
         laserBeam.physicsBody?.affectedByGravity = false
         laserBeam.physicsBody?.isDynamic = false
         laserHub.addChild(laserBeam)
-
-
     }
-
-    
-
 }
 
 //MARK: - physics contact delegate
@@ -193,7 +189,6 @@ extension GameScene{
     }
     
     //helper functions
-    
     func laserBeamContactBalls(with other:SKSpriteNode)
     {
         other.removeFromParent()
@@ -243,15 +238,15 @@ extension GameScene {
     func moveBackgrounds() {
         
         self.enumerateChildNodes(withName:"Background")
+        {
+            (node, error) in
+            
+            node.position.y -= 3
+            
+            if node.position.y < -((self.scene?.size.height)!)
             {
-                (node, error) in
-                
-                node.position.y -= 3
-                
-                if node.position.y < -((self.scene?.size.height)!)
-                {
-                    node.position.y += (self.scene?.size.height)! * 3
-                }
+                node.position.y += (self.scene?.size.height)! * 3
+            }
         }
     }
     
