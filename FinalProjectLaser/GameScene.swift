@@ -167,24 +167,25 @@ extension GameScene{
         }
         else if categoryA == laserBeamCategory || categoryB == laserBeamCategory
         {
-//            if ( categoryA != nil)
-//            {
+
             let otherNode:SKSpriteNode
             if categoryA == laserBeamCategory {
                 otherNode = contact.bodyB.node as! SKSpriteNode
-                if otherNode == smallBall {
+                if otherNode.physicsBody?.categoryBitMask == smallBallCategory {
                     laserBeamContactBalls(with: otherNode)
                 }
             } else{
                 otherNode = contact.bodyA.node as! SKSpriteNode
-                if otherNode == smallBall {
+                if otherNode.physicsBody?.categoryBitMask == smallBallCategory {
                     laserBeamContactBalls(with: otherNode)
                 }
             }
 //            let otherNode:SKSpriteNode = (categoryA == laserBeamCategory) ? contact.bodyB.node as! SKSpriteNode : contact.bodyA.node as! SKSpriteNode
-//            laserBeamContactBalls(with: otherNode)
-//            print("contactLaser")
-//            }
+//            if otherNode.physicsBody?.categoryBitMask == smallBallCategory{
+//                laserBeamContactBalls(with: otherNode)
+//                print("contactLaser")
+//                }
+            }
         }
     }
     
@@ -194,7 +195,7 @@ extension GameScene{
         other.removeFromParent()
     }
 
-}
+
 
 //MARK: - functions
 extension GameScene {
