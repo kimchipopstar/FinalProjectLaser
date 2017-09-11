@@ -21,6 +21,7 @@
 		4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5D71F5F676E007014D8 /* Main.storyboard */; };
 		4DBDB5DB1F5F676E007014D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */; };
 		4DBDB5DE1F5F676E007014D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5DC1F5F676E007014D8 /* LaunchScreen.storyboard */; };
+		688566C71F67493E009FB097 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688566C61F67493E009FB097 /* Background.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBDB5DD1F5F676E007014D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBDB5DF1F5F676E007014D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		688566C61F67493E009FB097 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				4D0C7EF71F672AE4003C861C /* CategoryEnum.swift */,
 				4D0C7EF31F6724E6003C861C /* Laser.swift */,
 				4D0C7EF91F672C8E003C861C /* Hero.swift */,
+				688566C61F67493E009FB097 /* Background.swift */,
 				4D791CE51F5F9DC000656D7B /* MainMenu.sks */,
 				4D791CE71F5F9FCA00656D7B /* MainMenu.swift */,
 				4DBDB5D51F5F676E007014D8 /* GameViewController.swift */,
@@ -171,6 +174,7 @@
 				4DBDB5D41F5F676E007014D8 /* GameScene.swift in Sources */,
 				4DBDB5D61F5F676E007014D8 /* GameViewController.swift in Sources */,
 				4DBDB5CE1F5F676E007014D8 /* AppDelegate.swift in Sources */,
+				688566C71F67493E009FB097 /* Background.swift in Sources */,
 				4D0C7EF41F6724E6003C861C /* Laser.swift in Sources */,
 				4D0C7EFA1F672C8E003C861C /* Hero.swift in Sources */,
 				4D791CE81F5F9FCA00656D7B /* MainMenu.swift in Sources */,
