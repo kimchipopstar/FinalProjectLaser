@@ -36,9 +36,6 @@ class Laser: SKSpriteNode {
         laserHub.physicsBody?.contactTestBitMask = CategoryEnum.smallBallCategory.rawValue
         laserHub.physicsBody?.affectedByGravity = false
         laserHub.physicsBody?.isDynamic = false
-        self.addChild(laserHub)
-        
-        
     }
     
     func laserBeamSetUp()
@@ -53,9 +50,5 @@ class Laser: SKSpriteNode {
         laserBeam.physicsBody?.contactTestBitMask = CategoryEnum.smallBallCategory.rawValue | CategoryEnum.heroCategory.rawValue
         laserBeam.physicsBody?.affectedByGravity = false
         laserBeam.physicsBody?.isDynamic = false
-        laserHub.addChild(laserBeam)
-        
-        
     }
-    
 }

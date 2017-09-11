@@ -15,8 +15,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var background = SKSpriteNode()
     let hero:Hero = Hero(imageNamed: "Laser")
     let laser:Laser = Laser()
-    
-    
 }
 
 extension GameScene{
@@ -31,11 +29,11 @@ extension GameScene{
         view.showsPhysics = true
         
         //node set up functions
-        
+//        laser.setUp(hubTexture: "laserHub", beamTextrue: "laserBeam")
         laser.laserSetUp()
-//        self.addChild(laser)
+        self.addChild(laser.laserHub)
+        laser.laserHub.addChild(laser.laserBeam)
         
-
         hero.setUpHero()
         self.addChild(hero)
         
@@ -53,14 +51,12 @@ extension GameScene{
         
         createBackgrounds()
         
-        
         let borderFrame = SKPhysicsBody(edgeLoopFrom: (border?.frame)!)
         borderFrame.friction = 0
         borderFrame.restitution = 1
         self.physicsBody = borderFrame
-        
-        
     }
+    
     override func update(_ currentTime: TimeInterval) {
         
         moveBackgrounds()
@@ -76,23 +72,8 @@ extension GameScene{
             let smallBall = hero.createProjectile()
             
             self.addChild(smallBall)
-//            
-//            hero.launchTowards(location)
-//            var dx = CGFloat(location.x - hero.position.x)
-//            var dy = CGFloat(location.y - hero.position.y)
-//            
-//            let magnitude = sqrt(dx * dx + dy * dy)
-//            
-//            dx /= magnitude
-//            dy /= magnitude
-//            
-//            let vector = CGVector(dx: 60.0 * dx, dy: 60.0 * dy)
-//            
-//            smallBall.physicsBody?.applyImpulse(vector)
             
             hero.launchTowards(location: location, spriteNode:smallBall)
-            
-            
         }
     }
 }
@@ -105,7 +86,6 @@ extension GameScene{
     
     func didBegin(_ contact: SKPhysicsContact)
     {
-        
         let categoryA:UInt32! = contact.bodyA.categoryBitMask
         let categoryB:UInt32! = contact.bodyB.categoryBitMask
         
@@ -145,7 +125,6 @@ extension GameScene{
     {
         other.removeFromParent()
     }
-
 }
 
 //MARK: - functions
