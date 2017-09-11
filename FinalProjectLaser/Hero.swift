@@ -13,7 +13,6 @@ class Hero: SKSpriteNode {
     
     func setUpHero()
     {
-        
         size = CGSize(width: 200, height: 200)
         position = CGPoint(x: 0, y: -600)
         zPosition = 4
@@ -24,7 +23,7 @@ class Hero: SKSpriteNode {
     
     func createProjectile() -> SKSpriteNode
     {
-            let smallBall = SKSpriteNode(imageNamed: "Projectile1")
+            let smallBall = SKSpriteNode(imageNamed: "SoccerBall")
             smallBall.position = position
             smallBall.size = CGSize(width: 30, height: 30)
             smallBall.physicsBody = SKPhysicsBody(circleOfRadius: smallBall.size.width / 2)
