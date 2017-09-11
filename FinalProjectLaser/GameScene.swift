@@ -12,7 +12,7 @@ import GameplayKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     //MAKR: - Categories
     let noCategory:UInt32 = 0
-    
+
     let laserHubCategory:UInt32 = 0b1
     let laserBeamCategory:UInt32 = 0b1 << 1
     let smallBallCategory:UInt32 = 0b1 << 2
@@ -33,7 +33,7 @@ extension GameScene{
     
     override func didMove(to view: SKView) {
         
-        //Background Music
+//        Background Music
         setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
         
         //physicls world delegate
@@ -45,12 +45,11 @@ extension GameScene{
         laserBeamSetUp()
 
 //        laserInitialPosition()
-        
+//        
 //        let laserDestination:CGPoint = CGPoint(x: -(self.frame.width / 2), y: -(self.frame.height / 2))
-//        let moveLaserAction:SKAction = SKAction.move(to: laserDestination, duration: 3)
-//        laserHub?.run(moveLaserAction)
-        
-//        leftModel?.run(moveLaserAction)
+//        let moveLaserAction:SKAction = SKAction.move(to: laserDestination, duration: 10)
+//        laserHub.run(moveLaserAction)
+
         
         let border = self.childNode(withName: "BorderSprite")
         
@@ -85,6 +84,7 @@ extension GameScene{
         for touch in (touches ) {
             let location = touch.location(in: self)
             
+
             smallBall = SKSpriteNode(imageNamed: "SoccerBall")
             smallBall.position = Hero.position
             smallBall.size = CGSize(width: 30, height: 30)
@@ -93,7 +93,9 @@ extension GameScene{
             smallBall.zPosition = 3
             smallBall.name = "SmallBall"
             smallBall.physicsBody?.categoryBitMask = smallBallCategory
-            //            smallBall.physicsBody?.collisionBitMask  = noCategory
+
+//            smallBall.physicsBody?.collisionBitMask  = noCategory
+
             smallBall.physicsBody?.contactTestBitMask = laserBeamCategory | laserHubCategory
             
             self.addChild(smallBall)
@@ -130,8 +132,6 @@ extension GameScene{
         laserHub.physicsBody?.affectedByGravity = false
         laserHub.physicsBody?.isDynamic = false
         self.addChild(laserHub)
-        
-        
     }
     
     func laserBeamSetUp()
@@ -148,9 +148,6 @@ extension GameScene{
         laserBeam.physicsBody?.isDynamic = false
         laserHub.addChild(laserBeam)
     }
-
-    
-
 }
 
 //MARK: - physics contact delegate
