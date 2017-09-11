@@ -73,6 +73,7 @@ extension GameScene{
         for touch in (touches ) {
             let location = touch.location(in: self)
             
+
             let smallBall = hero.createProjectile()
             
             self.addChild(smallBall)
@@ -140,7 +141,6 @@ extension GameScene{
     }
     
     //helper functions
-    
     func laserBeamContactBalls(with other:SKSpriteNode)
     {
         other.removeFromParent()
@@ -190,15 +190,15 @@ extension GameScene {
     func moveBackgrounds() {
         
         self.enumerateChildNodes(withName:"Background")
+        {
+            (node, error) in
+            
+            node.position.y -= 3
+            
+            if node.position.y < -((self.scene?.size.height)!)
             {
-                (node, error) in
-                
-                node.position.y -= 3
-                
-                if node.position.y < -((self.scene?.size.height)!)
-                {
-                    node.position.y += (self.scene?.size.height)! * 3
-                }
+                node.position.y += (self.scene?.size.height)! * 3
+            }
         }
     }
     
