@@ -156,8 +156,8 @@ extension GameScene{
     func didBegin(_ contact: SKPhysicsContact)
     {
         
-        let categoryA:UInt32 = contact.bodyA.categoryBitMask
-        let categoryB:UInt32 = contact.bodyB.categoryBitMask
+        let categoryA:UInt32! = contact.bodyA.categoryBitMask
+        let categoryB:UInt32! = contact.bodyB.categoryBitMask
         
         if categoryA == laserHubCategory || categoryB == laserHubCategory
         {
@@ -167,9 +167,24 @@ extension GameScene{
         }
         else if categoryA == laserBeamCategory || categoryB == laserBeamCategory
         {
-            let otherNode:SKSpriteNode = (categoryA == laserBeamCategory) ? contact.bodyB.node as! SKSpriteNode : contact.bodyA.node as! SKSpriteNode
-            laserBeamContactBalls(with: otherNode)
-            print("contactLaser")
+//            if ( categoryA != nil)
+//            {
+            let otherNode:SKSpriteNode
+            if categoryA == laserBeamCategory {
+                otherNode = contact.bodyB.node as! SKSpriteNode
+                if otherNode == smallBall {
+                    laserBeamContactBalls(with: otherNode)
+                }
+            } else{
+                otherNode = contact.bodyA.node as! SKSpriteNode
+                if otherNode == smallBall {
+                    laserBeamContactBalls(with: otherNode)
+                }
+            }
+//            let otherNode:SKSpriteNode = (categoryA == laserBeamCategory) ? contact.bodyB.node as! SKSpriteNode : contact.bodyA.node as! SKSpriteNode
+//            laserBeamContactBalls(with: otherNode)
+//            print("contactLaser")
+//            }
         }
     }
     
