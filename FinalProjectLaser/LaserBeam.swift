@@ -13,13 +13,11 @@ import GameplayKit
 
 class LaserBeam: SKSpriteNode {
 
-    
     init() {
         
         let laserBeamTexture = SKTexture(imageNamed: "LaserBeam")
         super.init(texture: laserBeamTexture, color: UIColor.clear, size: laserBeamTexture.size())
 
-        
         zPosition = 2
         size.width = 1320
         position = CGPoint(x: 670, y: 80)

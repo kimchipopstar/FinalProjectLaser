@@ -14,24 +14,6 @@ import GameplayKit
 class Laser: SKSpriteNode {
     
     var laserHub:SKSpriteNode = LaserHub()
-    
-    
-//    func laserSetUp()
-//    {
-//        laserHubSetUp()
-//        laserBeamSetUp()
-//    }
-//    
-//    func laserHubSetUp()
-//    {
-//        laserHub = LaserHub()
-//    }
-//    
-//    func laserBeamSetUp()
-//    {
-//        laserBeam = LaserBeam()
-//    }
-//    
 
     static func moveLaser(scene:SKScene) {
             

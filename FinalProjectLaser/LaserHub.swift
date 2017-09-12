@@ -14,7 +14,6 @@ import GameplayKit
 class LaserHub: SKSpriteNode {
     
     var laserBeam = LaserBeam()
-
     
     init() {
         

@@ -14,7 +14,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MAKR: - node Properties
     var background:Background = Background()
     let hero:Hero = Hero(imageNamed: "Laser")
-    //let laser:Laser = Laser()
 }
 
 extension GameScene{
@@ -32,13 +31,13 @@ extension GameScene{
         
         
         
+        // MARK: - HELLO
+        
         
         func spawnLasers()
         {
             let laser = Laser()
-//        laser.laserSetUp()
-        self.addChild(laser.laserHub)
-//        laser.laserHub.addChild(laser.laserBeam)
+            self.addChild(laser.laserHub)
         }
         
         
@@ -110,17 +109,10 @@ extension GameScene{
         
         if categoryA == CategoryEnum.laserHubCategory.rawValue || categoryB == CategoryEnum.laserHubCategory.rawValue
         {
-            // If Ball hits button
-            
-           // laser.laserBeam.removeFromParent()
-            //            laserBeam.removeFromParent()
-            
-            
-            if let laserNode = contact.bodyA.node as? LaserHub {
+            if let laserNode = contact.bodyA.node as? LaserHub
+            {
                 laserNode.laserBeam.removeFromParent()
             }
-            
-            
             print("contactHub")
         }
         else if categoryA == CategoryEnum.laserBeamCategory.rawValue || categoryB == CategoryEnum.laserBeamCategory.rawValue
