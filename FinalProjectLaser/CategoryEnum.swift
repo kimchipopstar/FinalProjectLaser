@@ -14,4 +14,23 @@ enum CategoryEnum:UInt32 {
     case laserBeamCategory = 2
     case smallBallCategory = 4
     case heroCategory = 8
+    
+    init?(rawValue: UInt32) {
+        switch rawValue {
+        case 0:
+            self = .noCategory
+            break
+        case 1:
+            self = .laserHubCategory
+            break
+        case 2:
+            self = .laserBeamCategory
+        case 4:
+            self = .smallBallCategory
+        case 8:
+            self = .heroCategory
+        default:
+            return nil
+        }
+    }
 }

@@ -10,6 +10,7 @@
 		4D0C7EF41F6724E6003C861C /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EF31F6724E6003C861C /* Laser.swift */; };
 		4D0C7EF81F672AE4003C861C /* CategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EF71F672AE4003C861C /* CategoryEnum.swift */; };
 		4D0C7EFA1F672C8E003C861C /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EF91F672C8E003C861C /* Hero.swift */; };
+		4D0C7EFE1F688D7E003C861C /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EFD1F688D7E003C861C /* Projectile.swift */; };
 		4D791CE61F5F9DC000656D7B /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4D791CE51F5F9DC000656D7B /* MainMenu.sks */; };
 		4D791CE81F5F9FCA00656D7B /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D791CE71F5F9FCA00656D7B /* MainMenu.swift */; };
 		4D791CEA1F61505F00656D7B /* Elektronomia - Sky High.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */; };
@@ -30,6 +31,7 @@
 		4D0C7EF31F6724E6003C861C /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
 		4D0C7EF71F672AE4003C861C /* CategoryEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEnum.swift; sourceTree = "<group>"; };
 		4D0C7EF91F672C8E003C861C /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		4D0C7EFD1F688D7E003C861C /* Projectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
 		4D791CE51F5F9DC000656D7B /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
 		4D791CE71F5F9FCA00656D7B /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Elektronomia - Sky High.mp3"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				688566C81F677405009FB097 /* LaserHub.swift */,
 				688566CA1F677415009FB097 /* LaserBeam.swift */,
 				4D0C7EF91F672C8E003C861C /* Hero.swift */,
+				4D0C7EFD1F688D7E003C861C /* Projectile.swift */,
 				688566C61F67493E009FB097 /* Background.swift */,
 				4D791CE51F5F9DC000656D7B /* MainMenu.sks */,
 				4D791CE71F5F9FCA00656D7B /* MainMenu.swift */,
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBDB5D41F5F676E007014D8 /* GameScene.swift in Sources */,
+				4D0C7EFE1F688D7E003C861C /* Projectile.swift in Sources */,
 				4DBDB5D61F5F676E007014D8 /* GameViewController.swift in Sources */,
 				4DBDB5CE1F5F676E007014D8 /* AppDelegate.swift in Sources */,
 				688566C71F67493E009FB097 /* Background.swift in Sources */,
