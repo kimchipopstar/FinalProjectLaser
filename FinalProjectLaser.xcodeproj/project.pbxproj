@@ -86,15 +86,10 @@
 			children = (
 				4DBDB5CF1F5F676E007014D8 /* GameScene.sks */,
 				4DBDB5D31F5F676E007014D8 /* GameScene.swift */,
-				4D0C7EF71F672AE4003C861C /* CategoryEnum.swift */,
-				4D0C7EF31F6724E6003C861C /* Laser.swift */,
-				688566D01F688D6C009FB097 /* LaserRight.swift */,
-				688566C81F677405009FB097 /* LaserHub.swift */,
-				688566CA1F677415009FB097 /* LaserBeam.swift */,
-				688566CC1F688AF0009FB097 /* LaserHubRight.swift */,
-				688566CE1F688B09009FB097 /* LaserBeamRight.swift */,
-				4D0C7EF91F672C8E003C861C /* Hero.swift */,
-				688566C61F67493E009FB097 /* Background.swift */,
+				688566D71F689AC6009FB097 /* Collision Category Enum */,
+				688566D21F689A02009FB097 /* Lasers */,
+				688566D51F689A83009FB097 /* Hero */,
+				688566D61F689A93009FB097 /* Background */,
 				4D791CE51F5F9DC000656D7B /* MainMenu.sks */,
 				4D791CE71F5F9FCA00656D7B /* MainMenu.swift */,
 				4DBDB5D51F5F676E007014D8 /* GameViewController.swift */,
@@ -107,6 +102,59 @@
 				4DBDB5DF1F5F676E007014D8 /* Info.plist */,
 			);
 			path = FinalProjectLaser;
+			sourceTree = "<group>";
+		};
+		688566D21F689A02009FB097 /* Lasers */ = {
+			isa = PBXGroup;
+			children = (
+				688566D31F689A32009FB097 /* Left */,
+				688566D41F689A52009FB097 /* Right */,
+			);
+			name = Lasers;
+			sourceTree = "<group>";
+		};
+		688566D31F689A32009FB097 /* Left */ = {
+			isa = PBXGroup;
+			children = (
+				4D0C7EF31F6724E6003C861C /* Laser.swift */,
+				688566CA1F677415009FB097 /* LaserBeam.swift */,
+				688566C81F677405009FB097 /* LaserHub.swift */,
+			);
+			name = Left;
+			sourceTree = "<group>";
+		};
+		688566D41F689A52009FB097 /* Right */ = {
+			isa = PBXGroup;
+			children = (
+				688566D01F688D6C009FB097 /* LaserRight.swift */,
+				688566CC1F688AF0009FB097 /* LaserHubRight.swift */,
+				688566CE1F688B09009FB097 /* LaserBeamRight.swift */,
+			);
+			name = Right;
+			sourceTree = "<group>";
+		};
+		688566D51F689A83009FB097 /* Hero */ = {
+			isa = PBXGroup;
+			children = (
+				4D0C7EF91F672C8E003C861C /* Hero.swift */,
+			);
+			name = Hero;
+			sourceTree = "<group>";
+		};
+		688566D61F689A93009FB097 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				688566C61F67493E009FB097 /* Background.swift */,
+			);
+			name = Background;
+			sourceTree = "<group>";
+		};
+		688566D71F689AC6009FB097 /* Collision Category Enum */ = {
+			isa = PBXGroup;
+			children = (
+				4D0C7EF71F672AE4003C861C /* CategoryEnum.swift */,
+			);
+			name = "Collision Category Enum";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
