@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class Projecttile: SKSpriteNode {
+class Projectile: SKSpriteNode {
     
     init(){
         

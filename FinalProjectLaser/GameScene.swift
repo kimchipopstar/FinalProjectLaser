@@ -145,16 +145,18 @@ extension GameScene{
     
     func projectileContactLaserBeam(_ contact: SKPhysicsContact){
         
-        if let projectileNode = contact.bodyA.node as? SKSpriteNode {
+        if let projectileNode = contact.bodyA.node as? Projectile {
             projectileNode.removeFromParent()
-        } else if let projectileNode = contact.bodyB.node as? SKSpriteNode {
+        } else if let projectileNode = contact.bodyB.node as? Projectile {
             projectileNode.removeFromParent()
         }
         
     }
     
     func laserBeamContactHero(_ contact: SKPhysicsContact){
-    
+        
+        
+        
     }
     
     // Exclusive Game Scenarios:
