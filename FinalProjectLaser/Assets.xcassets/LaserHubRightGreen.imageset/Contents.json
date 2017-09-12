@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "LaserHubRightGreen.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "LaserHub.png",
       "scale" : "2x"
     },
     {
