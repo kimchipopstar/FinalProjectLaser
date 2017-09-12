@@ -14,7 +14,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MAKR: - node Properties
     var background:Background = Background()
     let hero:Hero = Hero(imageNamed: "Laser")
-    let laser:Laser = Laser()
+    //let laser:Laser = Laser()
 }
 
 extension GameScene{
@@ -22,18 +22,33 @@ extension GameScene{
     override func didMove(to view: SKView) {
         
 //        Background Music
-        setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
+//        setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
         
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
         view.showsPhysics = true
         
-        //node set up functions
-        laser.laserSetUp()
+
+        
+        
+        
+        
+        func spawnLasers()
+        {
+            let laser = Laser()
+//        laser.laserSetUp()
         self.addChild(laser.laserHub)
-        laser.laserHub.addChild(laser.laserBeam)
+//        laser.laserHub.addChild(laser.laserBeam)
+        }
+        
+        
+        let waitAction = SKAction.wait(forDuration: 6)
+        let spawnLaserAction = SKAction.run(spawnLasers) //call your function
+        let entireACtion = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction]))
+        run(entireACtion)
         
         hero.setUpHero()
+        
         self.addChild(hero)
         
 
@@ -57,8 +72,9 @@ extension GameScene{
     override func update(_ currentTime: TimeInterval) {
         
         background.moveBackgrounds(scene:self)
-        
+        Laser.moveLaser(scene:self)
         removeExessProjectiles()
+        Laser.removeExessLasers(scene: self)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -94,8 +110,16 @@ extension GameScene{
         
         if categoryA == CategoryEnum.laserHubCategory.rawValue || categoryB == CategoryEnum.laserHubCategory.rawValue
         {
-            laser.laserBeam.removeFromParent()
+            // If Ball hits button
+            
+           // laser.laserBeam.removeFromParent()
             //            laserBeam.removeFromParent()
+            
+            
+            if let laserNode = contact.bodyA.node as? LaserHub {
+                laserNode.laserBeam.removeFromParent()
+            }
+            
             
             print("contactHub")
         }
@@ -138,10 +162,10 @@ extension GameScene{
 
 //MARK: - functions
 extension GameScene {
-    
-    func laserScrolling(){
-        laser.laserHub.position = CGPoint(x: (-self.frame.width / 2) + ((laser.laserHub.frame.width) / 2), y: (self.frame.height / 2) + ((laser.laserHub.frame.height)/2))
-    }
+//    
+//    func laserScrolling(){
+//        laser.laserHub.position = CGPoint(x: (-self.frame.width / 2) + ((laser.laserHub.frame.width) / 2), y: (self.frame.height / 2) + ((laser.laserHub.frame.height)/2))
+//    }
     
     func setBackgroundMusic(atScene:SKScene, fileName:String)
     {
