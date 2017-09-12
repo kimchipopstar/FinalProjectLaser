@@ -42,7 +42,7 @@ extension GameScene{
         }
         
         
-        let waitAction = SKAction.wait(forDuration: 6)
+        let waitAction = SKAction.wait(forDuration: 2)
         let spawnLaserAction = SKAction.run(spawnLasers) //call your function
         let entireACtion = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction]))
         run(entireACtion)
@@ -129,6 +129,7 @@ extension GameScene{
             let otherNode:SKSpriteNode
             if categoryA == CategoryEnum.laserBeamCategory.rawValue
             {
+                
                 otherNode = contact.bodyB.node as! SKSpriteNode
                 if otherNode.physicsBody?.categoryBitMask == CategoryEnum.smallBallCategory.rawValue
                 {
