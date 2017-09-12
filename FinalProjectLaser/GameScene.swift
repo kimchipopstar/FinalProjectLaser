@@ -14,7 +14,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MAKR: - node Properties
     var background:Background = Background()
     let hero:Hero = Hero(imageNamed: "Laser")
-    //let laser:Laser = Laser()
 }
 
 extension GameScene{
@@ -32,20 +31,27 @@ extension GameScene{
         
         
         
+        // MARK: - HELLO
+        
         
         func spawnLasers()
         {
             let laser = Laser()
-//        laser.laserSetUp()
-        self.addChild(laser.laserHub)
-//        laser.laserHub.addChild(laser.laserBeam)
+            self.addChild(laser.laserHub)
+        }
+        
+        func spawnRightLasers()
+        {
+            let rightLaser = LaserRight()
+            self.addChild(rightLaser.laserHubRight)
         }
         
         
         let waitAction = SKAction.wait(forDuration: 6)
-        let spawnLaserAction = SKAction.run(spawnLasers) //call your function
-        let entireACtion = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction]))
-        run(entireACtion)
+        let spawnLaserAction = SKAction.run(spawnLasers)
+        let spawnRightLaserAction = SKAction.run(spawnRightLasers)
+        let entireAction = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction, spawnRightLaserAction, waitAction]))
+        run(entireAction)
         
         hero.setUpHero()
         
@@ -73,8 +79,10 @@ extension GameScene{
         
         background.moveBackgrounds(scene:self)
         Laser.moveLaser(scene:self)
+        LaserRight.moveLaser(scene:self)
         removeExessProjectiles()
         Laser.removeExessLasers(scene: self)
+        LaserRight.removeExessLasers(scene: self)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -110,17 +118,10 @@ extension GameScene{
         
         if categoryA == CategoryEnum.laserHubCategory.rawValue || categoryB == CategoryEnum.laserHubCategory.rawValue
         {
-            // If Ball hits button
-            
-           // laser.laserBeam.removeFromParent()
-            //            laserBeam.removeFromParent()
-            
-            
-            if let laserNode = contact.bodyA.node as? LaserHub {
+            if let laserNode = contact.bodyA.node as? LaserHub
+            {
                 laserNode.laserBeam.removeFromParent()
             }
-            
-            
             print("contactHub")
         }
         else if categoryA == CategoryEnum.laserBeamCategory.rawValue || categoryB == CategoryEnum.laserBeamCategory.rawValue
@@ -129,10 +130,12 @@ extension GameScene{
             let otherNode:SKSpriteNode
             if categoryA == CategoryEnum.laserBeamCategory.rawValue
             {
-                otherNode = contact.bodyB.node as! SKSpriteNode
-                if otherNode.physicsBody?.categoryBitMask == CategoryEnum.smallBallCategory.rawValue
-                {
-                    laserBeamContactBalls(with: otherNode)
+                
+                if let otherNode = contact.bodyB.node as? SKSpriteNode {
+                    if otherNode.physicsBody?.categoryBitMask == CategoryEnum.smallBallCategory.rawValue
+                    {
+                        laserBeamContactBalls(with: otherNode)
+                    }
                 }
             }
             else

@@ -1,8 +1,8 @@
 //
-//  LaserHub.swift
+//  LaserHubRight.swift
 //  FinalProjectLaser
 //
-//  Created by Tye Blackie on 2017-09-11.
+//  Created by Tye Blackie on 2017-09-12.
 //  Copyright © 2017 Jaewon Kim. All rights reserved.
 //
 
@@ -11,19 +11,19 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-class LaserHub: SKSpriteNode {
+class LaserHubRight: SKSpriteNode {
     
-    var laserBeam = LaserBeam()
+    var laserBeamRight = LaserBeamRight()
     
     init() {
         
-        let laserHubTexture = SKTexture(imageNamed: "LaserHubLeftGreen")
+        let laserHubTexture = SKTexture(imageNamed: "LaserHubRightGreen")
         super.init(texture: laserHubTexture, color: UIColor.clear, size: laserHubTexture.size())
-                
-        name = "laser"
+        
+        name = "rightLaser"
         zPosition = 1
         setScale(0.27)
-        position = CGPoint(x: -320, y: 700)
+        position = CGPoint(x: 320, y: 700)
         physicsBody = SKPhysicsBody(texture: laserHubTexture, size:size)
         physicsBody?.categoryBitMask = CategoryEnum.laserHubCategory.rawValue
         physicsBody?.collisionBitMask = CategoryEnum.noCategory.rawValue
@@ -31,10 +31,10 @@ class LaserHub: SKSpriteNode {
         physicsBody?.affectedByGravity = false
         physicsBody?.isDynamic = false
         
-        addChild(laserBeam)
+        addChild(laserBeamRight)
     }
     
-
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
