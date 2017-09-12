@@ -16,15 +16,15 @@ class Projecttile: SKSpriteNode {
         let projectileTexture = SKTexture(imageNamed: "SoccerBall")
         super.init(texture: projectileTexture, color: UIColor.clear, size: projectileTexture.size())
         
-        position = position
+        position = CGPoint(x: 0, y: -600)
         size = CGSize(width: 30, height: 30)
         physicsBody = SKPhysicsBody(circleOfRadius: self.size.width / 2)
-        smallBall.physicsBody?.affectedByGravity = true
-        smallBall.zPosition = 3
-        smallBall.name = "SmallBall"
-        smallBall.physicsBody?.categoryBitMask = CategoryEnum.smallBallCategory.rawValue
+        physicsBody?.affectedByGravity = true
+        zPosition = 3
+        name = "SmallBall"
+        physicsBody?.categoryBitMask = CategoryEnum.smallBallCategory.rawValue
         //            smallBall.physicsBody?.collisionBitMask  = noCategory
-        smallBall.physicsBody?.contactTestBitMask = CategoryEnum.laserBeamCategory.rawValue | CategoryEnum.laserHubCategory.rawValue
+        physicsBody?.contactTestBitMask = CategoryEnum.laserBeamCategory.rawValue | CategoryEnum.laserHubCategory.rawValue
         
     }
     
@@ -34,29 +34,3 @@ class Projecttile: SKSpriteNode {
     
 }
 
-
-
-//class LaserBeam: SKSpriteNode {
-//    
-//    
-//    init() {
-//        
-//        let laserBeamTexture = SKTexture(imageNamed: "LaserBeam")
-//        super.init(texture: laserBeamTexture, color: UIColor.clear, size: laserBeamTexture.size())
-//        
-//        
-//        zPosition = 2
-//        size.width = 1320
-//        position = CGPoint(x: 670, y: 80)
-//        physicsBody = SKPhysicsBody(texture: laserBeamTexture, size: size)
-//        physicsBody?.categoryBitMask = CategoryEnum.laserBeamCategory.rawValue
-//        physicsBody?.collisionBitMask = CategoryEnum.noCategory.rawValue
-//        physicsBody?.contactTestBitMask = CategoryEnum.smallBallCategory.rawValue | CategoryEnum.heroCategory.rawValue
-//        physicsBody?.affectedByGravity = false
-//        physicsBody?.isDynamic = false
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//}

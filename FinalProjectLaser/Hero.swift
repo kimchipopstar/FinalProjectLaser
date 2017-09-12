@@ -23,18 +23,8 @@ class Hero: SKSpriteNode {
     
     func createProjectile() -> SKSpriteNode
     {
-            let smallBall = SKSpriteNode(imageNamed: "SoccerBall")
-            smallBall.position = position
-            smallBall.size = CGSize(width: 30, height: 30)
-            smallBall.physicsBody = SKPhysicsBody(circleOfRadius: smallBall.size.width / 2)
-            smallBall.physicsBody?.affectedByGravity = true
-            smallBall.zPosition = 3
-            smallBall.name = "SmallBall"
-            smallBall.physicsBody?.categoryBitMask = CategoryEnum.smallBallCategory.rawValue
-            //            smallBall.physicsBody?.collisionBitMask  = noCategory
-            smallBall.physicsBody?.contactTestBitMask = CategoryEnum.laserBeamCategory.rawValue | CategoryEnum.laserHubCategory.rawValue
-        
-        return smallBall
+
+        return Projecttile()
     }
     
     func launchTowards(location:CGPoint, spriteNode:SKSpriteNode)

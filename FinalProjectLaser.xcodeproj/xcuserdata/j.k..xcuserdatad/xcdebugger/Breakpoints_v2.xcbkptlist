@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectLaser/GameScene.swift"
-            timestampString = "526939682.658097"
+            timestampString = "526947352.780295"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "contactLogic(contact:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectLaser/GameScene.swift"
-            timestampString = "526939685.486981"
+            timestampString = "526947352.780295"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "contactLogic(contact:)"
             landmarkType = "7">
          </BreakpointContent>
