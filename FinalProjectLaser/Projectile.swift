@@ -23,7 +23,7 @@ class Projectile: SKSpriteNode {
         zPosition = 3
         name = "SmallBall"
         physicsBody?.categoryBitMask = CategoryEnum.smallBallCategory.rawValue
-        //            smallBall.physicsBody?.collisionBitMask  = noCategory
+        physicsBody?.collisionBitMask  = CategoryEnum.noCategory.rawValue
         physicsBody?.contactTestBitMask = CategoryEnum.laserBeamCategory.rawValue | CategoryEnum.laserHubCategory.rawValue
         
     }

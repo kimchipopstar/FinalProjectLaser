@@ -13,7 +13,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MAKR: - node Properties
     var background:Background = Background()
-    let hero:Hero = Hero(imageNamed: "Laser")
+    let hero:Hero = Hero()
     //let laser:Laser = Laser()
 }
 
@@ -42,7 +42,7 @@ extension GameScene{
         let entireACtion = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction]))
         run(entireACtion)
         
-        hero.setUpHero()
+//        hero.setUpHero()
         
         self.addChild(hero)
         
@@ -155,7 +155,7 @@ extension GameScene{
     
     func laserBeamContactHero(_ contact: SKPhysicsContact){
         
-        
+//        if let heroNode 
         
     }
     

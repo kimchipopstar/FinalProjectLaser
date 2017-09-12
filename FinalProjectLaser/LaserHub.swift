@@ -15,7 +15,6 @@ class LaserHub: SKSpriteNode {
     
     var laserBeam = LaserBeam()
 
-    
     init() {
         
         let laserHubTexture = SKTexture(imageNamed: "LaserHub")
