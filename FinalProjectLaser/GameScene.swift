@@ -150,12 +150,17 @@ extension GameScene{
         
     }
     
+    
     func hubContactsProjectile(_ contact: SKPhysicsContact) {
         
         if let laserNode = contact.bodyA.node as? LaserHub {
             laserNode.laserBeam.removeFromParent()
         } else if let laserNode = contact.bodyB.node as? LaserHub {
             laserNode.laserBeam.removeFromParent()
+        } else if let laserBeamRightNode = contact.bodyA.node as? LaserHubRight {
+            laserBeamRightNode.laserBeamRight.removeFromParent()
+        } else if let laserBeamRightNode = contact.bodyB.node as? LaserHubRight {
+            laserBeamRightNode.laserBeamRight.removeFromParent()
         }
     }
     
