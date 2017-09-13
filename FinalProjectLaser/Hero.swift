@@ -23,7 +23,7 @@ class Hero: SKSpriteNode {
         physicsBody?.collisionBitMask = CategoryEnum.noCategory.rawValue
         physicsBody?.contactTestBitMask = CategoryEnum.laserBeamCategory.rawValue
         physicsBody?.affectedByGravity = false
-        physicsBody?.isDynamic = false
+        physicsBody?.isDynamic = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,7 +32,7 @@ class Hero: SKSpriteNode {
     
 //    func setUpHero()
 //    {
-//        size = CGSize(width: 200, height: 200)
+//        size = CGSizte(width: 200, height: 200)
 //        position = CGPoint(x: 0, y: -600)
 //        zPosition = 4
 //        let heroTexture:SKTexture = 
