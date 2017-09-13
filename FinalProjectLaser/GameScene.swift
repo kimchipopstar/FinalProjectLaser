@@ -108,18 +108,16 @@ extension GameScene{
         switch gameScenario {
         case .hubContactProjectile:
             hubContactsProjectile(contact)
-            
-            // call hubContactsProjectile function
-            
             break
+            
         case .projectileContactLaserBeam:
-            projectileContactLaserBeam(contact)
-            // call projectile contacts laser function
+            projectileOrHeroContactLaserBeam(contact)
             break
-        case .laserBeamContactHero:
-            laserBeamContactHero(contact)
-            // call laserbeam hits hero function.
-            break
+            
+//        case .laserBeamContactHero:
+//            laserBeamContactHero(contact)
+//            break
+            
         default:
             break
         }
@@ -142,9 +140,11 @@ extension GameScene{
             return .hubContactProjectile
         } else if categoryA == CategoryEnum.laserBeamCategory.rawValue || categoryB == CategoryEnum.laserBeamCategory.rawValue{
             return .projectileContactLaserBeam
-        } else if categoryA == CategoryEnum.heroCategory.rawValue || categoryB == CategoryEnum.heroCategory.rawValue{
-            return .laserBeamContactHero
-        } else {
+        }
+//        } else if categoryA == CategoryEnum.heroCategory.rawValue || categoryB == CategoryEnum.heroCategory.rawValue{
+//            return .laserBeamContactHero
+//        }
+        else {
             return .none
         }
         
@@ -159,21 +159,25 @@ extension GameScene{
         }
     }
     
-    func projectileContactLaserBeam(_ contact: SKPhysicsContact){
+    func projectileOrHeroContactLaserBeam(_ contact: SKPhysicsContact){
         
         if let projectileNode = contact.bodyA.node as? Projectile {
             projectileNode.removeFromParent()
         } else if let projectileNode = contact.bodyB.node as? Projectile {
             projectileNode.removeFromParent()
+        } else if (contact.bodyA.node as? Hero) != nil {
+            self.isPaused = true
+        } else if (contact.bodyB.node as? Hero) != nil{
+            self.isPaused = true
         }
         
     }
     
-    func laserBeamContactHero(_ contact: SKPhysicsContact){
-        
-//        if let heroNode 
-        
-    }
+//    func laserBeamContactHero(_ contact: SKPhysicsContact){
+//        
+//        self.isPaused = true
+//        
+//    }
     
     // Exclusive Game Scenarios:
     
@@ -184,90 +188,9 @@ extension GameScene{
     // 2 - if projectile contacts laser, then projectile disapears
     // 3 - If laserBeam contacts with hero, games pause
     
-    func contactLogic(contact:SKPhysicsContact) {
-        
-        
-        
-        let categoryA:UInt32! = contact.bodyA.categoryBitMask
-        let categoryB:UInt32! = contact.bodyB.categoryBitMask
-        
-        if categoryA == CategoryEnum.laserHubCategory.rawValue || categoryB == CategoryEnum.laserHubCategory.rawValue {
-            if let laserNode = contact.bodyA.node as? LaserHub {
-                laserNode.laserBeam.removeFromParent()
-            }
-            
-            print("contactHub")
-        } else if categoryA == CategoryEnum.laserBeamCategory.rawValue || categoryB == CategoryEnum.laserBeamCategory.rawValue {
-            
-            let otherNode:SKSpriteNode
-            if categoryA == CategoryEnum.laserBeamCategory.rawValue {
-                
-                otherNode = contact.bodyB.node as! SKSpriteNode
-                if otherNode.physicsBody?.categoryBitMask == CategoryEnum.smallBallCategory.rawValue {
-                    laserBeamContactBalls(with: otherNode)
-                } else if otherNode.physicsBody?.categoryBitMask == CategoryEnum.heroCategory.rawValue{
-                    view?.isPaused = true
-                }
-            } else {
-                otherNode = contact.bodyA.node as! SKSpriteNode
-                if otherNode.physicsBody?.categoryBitMask == CategoryEnum.smallBallCategory.rawValue {
-                    laserBeamContactBalls(with: otherNode)
-                } else if otherNode.physicsBody?.categoryBitMask == CategoryEnum.heroCategory.rawValue{
-                    view?.isPaused = true
-                }
-            }
-        }
-    }
     
-//    func contact(_ mask: UInt32, _ contact: SKPhysicsContact) {
-//        
-//        if let category = CategoryEnum.init(rawValue: mask) {
-//            
-//            switch category {
-//                
-//            case .laserBeamCategory:
-//                
-//                let otherNode:SKSpriteNode
-//
-//                let categoryA = CategoryEnum.init(rawValue: contact.bodyA.categoryBitMask)
-//                if categoryA == .laserBeamCategory {
-//                    otherNode = contact.bodyB.node as! SKSpriteNode
-//                    if otherNode.physicsBody?.categoryBitMask == CategoryEnum.smallBallCategory.rawValue {
-//                        laserBeamContactBalls(with: otherNode)
-//                    } else if otherNode.physicsBody?.categoryBitMask == CategoryEnum.heroCategory.rawValue{
-//                        view?.isPaused = true
-//                    }
-//                } else {
-//                    otherNode = contact.bodyA.node as! SKSpriteNode
-//                    if otherNode.physicsBody?.categoryBitMask == CategoryEnum.smallBallCategory.rawValue {
-//                        laserBeamContactBalls(with: otherNode)
-//                    } else if otherNode.physicsBody?.categoryBitMask == CategoryEnum.heroCategory.rawValue{
-//                        view?.isPaused = true
-//                    }
-//                }
-//                
-//                break
-//                
-//            case .laserHubCategory:
-//                
-//                if let laserNode = contact.bodyA.node as? LaserHub {
-//                    laserNode.laserBeam.removeFromParent()
-//                }
-//                print("contactHub")
-//                
-//                break
-//                
-//            default:
-//                break
-//            }
-//        }
-//        
-//    }
     
-    //helper functions
-    func laserBeamContactBalls(with other:SKSpriteNode) {
-        other.removeFromParent()
-    }
+
 }
 
 
