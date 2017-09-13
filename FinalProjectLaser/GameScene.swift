@@ -14,6 +14,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MAKR: - node Properties
     var background:Background = Background()
     let hero:Hero = Hero()
+    
     //let laser:Laser = Laser()
 }
 
@@ -26,12 +27,9 @@ extension GameScene{
         
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
-        view.showsPhysics = true
+//        view.showsPhysics = true
         
 
-        
-        
-        
         // MARK: - HELLO
         
         
@@ -49,7 +47,7 @@ extension GameScene{
         
         
 
-        let waitAction = SKAction.wait(forDuration: 6)
+        let waitAction = SKAction.wait(forDuration: 2)
         let spawnLaserAction = SKAction.run(spawnLasers)
         let spawnRightLaserAction = SKAction.run(spawnRightLasers)
         let entireAction = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction, spawnRightLaserAction, waitAction]))

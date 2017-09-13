@@ -11,19 +11,27 @@ import GameplayKit
 
 class Hero: SKSpriteNode {
     
+    var lives:Int
+    
     init() {
+        
+        lives = 3
+        
         let heroTexture:SKTexture = SKTexture(imageNamed: "Laser")
         super.init(texture: heroTexture, color: UIColor.clear, size: heroTexture.size())
         
         size = CGSize(width: 200, height: 200)
         position = CGPoint(x: 0, y: -600)
         zPosition = 4
+        texture = heroTexture
         physicsBody = SKPhysicsBody(texture: heroTexture, size: size)
         physicsBody?.categoryBitMask = CategoryEnum.heroCategory.rawValue
         physicsBody?.collisionBitMask = CategoryEnum.noCategory.rawValue
         physicsBody?.contactTestBitMask = CategoryEnum.laserBeamCategory.rawValue
         physicsBody?.affectedByGravity = false
         physicsBody?.isDynamic = true
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
