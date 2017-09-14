@@ -69,7 +69,7 @@ class Hero: SKSpriteNode {
         dx /= magnitude
         dy /= magnitude
         
-        let vector = CGVector(dx: 60.0 * dx, dy: 60.0 * dy)
+        let vector = CGVector(dx: 100.0 * dx, dy: 100.0 * dy)
         
         spriteNode.physicsBody?.applyImpulse(vector)
 

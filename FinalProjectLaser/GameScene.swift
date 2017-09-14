@@ -30,7 +30,7 @@ extension GameScene{
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
 
-        view.showsPhysics = false
+        view.showsPhysics = true
 
         
 
