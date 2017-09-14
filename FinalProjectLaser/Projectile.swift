@@ -13,7 +13,7 @@ class Projectile: SKSpriteNode {
     
     init(){
         
-        let projectileTexture = SKTexture(imageNamed: "CannonProjectile")
+        let projectileTexture = SKTexture(imageNamed: "CannonProjectile2")
         super.init(texture: projectileTexture, color: UIColor.clear, size: projectileTexture.size())
         
         position = CGPoint(x: 0, y: -600)
