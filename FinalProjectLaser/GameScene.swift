@@ -29,13 +29,15 @@ extension GameScene{
         
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
-//        view.showsPhysics = true
+
+        view.showsPhysics = false
+
         
 
         // MARK: - HELLO
         
         
-        func spawnLasers()
+        func spawnLeftLasers()
         {
             let laser = Laser()
             self.addChild(laser.laserHub)
@@ -47,14 +49,25 @@ extension GameScene{
             self.addChild(rightLaser.laserHubRight)
         }
         
-        
+        func randomLaserSelection()
+        {
+            let selection = Int(arc4random_uniform(2)+1)
+            
+            if selection == 1 {
+                spawnLeftLasers()
+            }else{
+                spawnRightLasers()
+            }
+        }
 
-        let waitAction = SKAction.wait(forDuration: 2)
-        let spawnLaserAction = SKAction.run(spawnLasers)
-        let spawnRightLaserAction = SKAction.run(spawnRightLasers)
-        let entireAction = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction, spawnRightLaserAction, waitAction]))
-        run(entireAction)
 
+        let waitAction = SKAction.wait(forDuration: 2.0, withRange: 2.0)
+        let spawnLaserAction = SKAction.run(randomLaserSelection)
+        let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction]))
+        run(spawnEntireAction)
+
+
+    
         
 //        hero.setUpHero()
         
@@ -139,15 +152,13 @@ extension GameScene{
                 laserRightHubNode.laserBeamRight.removeFromParent()
                 laserRightHubNode.texture = SKTexture(imageNamed: "LaserHubRightRed")
             }
-            
-
-            
         }
         
+
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.smallBallCategory.rawValue{
             body2.node?.removeFromParent()
         }
-        
+
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.heroCategory.rawValue {
             
             self.isPaused = true

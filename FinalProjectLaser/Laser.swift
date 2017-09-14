@@ -21,7 +21,7 @@ class Laser: SKSpriteNode {
         {
             (node, error) in
             
-            node.position.y -= 3
+            node.position.y -= 6
             
         }
     }
