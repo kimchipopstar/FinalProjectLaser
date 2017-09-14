@@ -147,10 +147,22 @@ extension GameScene{
             
             if let laserLeftHubNode = contact.bodyA.node as? LaserHub{
                 laserLeftHubNode.laserBeam.removeFromParent()
-                laserLeftHubNode.texture = SKTexture(imageNamed: "LaserHubLeftRed")
+                
+                if laserLeftHubNode.texture == SKTexture(imageNamed: "LaserHubLeftGreen") {
+                 addScore()
+                } else {
+                    laserLeftHubNode.texture = SKTexture(imageNamed: "LaserHubLeftRed")
+                }
+                
             } else if let laserRightHubNode = contact.bodyA.node as? LaserHubRight{
                 laserRightHubNode.laserBeamRight.removeFromParent()
-                laserRightHubNode.texture = SKTexture(imageNamed: "LaserHubRightRed")
+                
+                if laserRightHubNode.texture == SKTexture(imageNamed: "LaserHubRightGreen"){
+                    addScore()
+                } else {
+                    laserRightHubNode.texture = SKTexture(imageNamed: "LaserHubRightRed")
+                }
+                
             }
         }
         
@@ -161,7 +173,11 @@ extension GameScene{
 
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.heroCategory.rawValue {
             
-            self.isPaused = true
+            if hero.lives > 0{
+                loseLives()
+            } else {
+                self.isPaused = true
+            }
         }
         
 
