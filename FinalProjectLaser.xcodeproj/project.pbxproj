@@ -103,7 +103,6 @@
 			children = (
 				4DBDB5CF1F5F676E007014D8 /* GameScene.sks */,
 				4DBDB5D31F5F676E007014D8 /* GameScene.swift */,
-				4D0C7EFD1F688D7E003C861C /* Projectile.swift */,
 				688566D71F689AC6009FB097 /* Collision Category Enum */,
 				688566D21F689A02009FB097 /* Lasers */,
 				688566D51F689A83009FB097 /* Hero */,
@@ -157,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				4D0C7EF91F672C8E003C861C /* Hero.swift */,
+				4D0C7EFD1F688D7E003C861C /* Projectile.swift */,
 			);
 			name = Hero;
 			sourceTree = "<group>";

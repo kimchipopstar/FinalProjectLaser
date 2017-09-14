@@ -11,5 +11,19 @@ import GameplayKit
 
 class ScoreLabel: SKLabelNode {
     
+    override init() {
+        super.init()
+        text = "0"
+        fontSize = 70
+        fontColor = SKColor.white
+        horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
+        position = CGPoint(x: 350, y: 600)
+        zPosition = 100
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
 

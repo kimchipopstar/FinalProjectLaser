@@ -14,8 +14,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MAKR: - node Properties
     var background:Background = Background()
     let hero:Hero = Hero()
-    let livesLabel:SKLabelNode = SKLabelNode()
-    let scoreLabel:SKLabelNode = SKLabelNode()
+    let livesLabel:LivesLabel = LivesLabel()
+    let scoreLabel:ScoreLabel = ScoreLabel()
     
     //let laser:Laser = Laser()
 }
@@ -69,22 +69,8 @@ extension GameScene{
         borderFrame.restitution = 1
         self.physicsBody = borderFrame
         
-        
-        livesLabel.text = "Lives: 3"
-        livesLabel.fontSize = 70
-        livesLabel.fontColor = SKColor.white
-        livesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-//        livesLabel.position = CGPoint(x: -self.size.width * 0.15, y: self.size.height * 0.9)
-        livesLabel.position = CGPoint(x: -350, y: -600)
-        livesLabel.zPosition = 100
         self.addChild(livesLabel)
-        
-        scoreLabel.text = "0"
-        scoreLabel.fontSize = 70
-        scoreLabel.fontColor = SKColor.white
-        scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
-        scoreLabel.position = CGPoint(x: 350, y: 600)
-        scoreLabel.zPosition = 100
+
         self.addChild(scoreLabel)
         
     }
@@ -132,35 +118,27 @@ extension GameScene{
 extension GameScene{
     
     func didBegin(_ contact: SKPhysicsContact) {
-        
         let gameScenario = scenario(contact)
-        
         switch gameScenario {
         case .hubContactProjectile:
             hubContactsProjectile(contact)
             break
-            
         case .projectileContactLaserBeam:
             projectileOrHeroContactLaserBeam(contact)
             break
-            
 //        case .laserBeamContactHero:
 //            laserBeamContactHero(contact)
 //            break
-            
         default:
             break
         }
     }
-    
-    
     enum GameSenario {
         case hubContactProjectile
         case projectileContactLaserBeam
         case laserBeamContactHero
         case none
     }
-    
     func scenario(_ contact: SKPhysicsContact) -> GameSenario {
         
         let categoryA:UInt32! = contact.bodyA.categoryBitMask
@@ -179,8 +157,6 @@ extension GameScene{
         }
         
     }
-    
-    
     func hubContactsProjectile(_ contact: SKPhysicsContact) {
         
         if let laserNode = contact.bodyA.node as? LaserHub {
@@ -193,12 +169,11 @@ extension GameScene{
             laserBeamRightNode.laserBeamRight.removeFromParent()
         }
     }
-    
     func projectileOrHeroContactLaserBeam(_ contact: SKPhysicsContact){
         
         if let projectileNode = contact.bodyA.node as? Projectile {
             projectileNode.removeFromParent()
-                addScore()
+            addScore()
         } else if let projectileNode = contact.bodyB.node as? Projectile {
             projectileNode.removeFromParent()
             addScore()
@@ -212,12 +187,6 @@ extension GameScene{
         
     }
     
-//    func laserBeamContactHero(_ contact: SKPhysicsContact){
-//        
-//        self.isPaused = true
-//        
-//    }
-    
     // Exclusive Game Scenarios:
     
     // First - Determine which of 1-3 scenarios we should enter.
@@ -226,10 +195,6 @@ extension GameScene{
     // 1 - If hub contacts projectile, then laserBeam goes off
     // 2 - if projectile contacts laser, then projectile disapears
     // 3 - If laserBeam contacts with hero, games pause
-    
-    
-    
-
 }
 
 
