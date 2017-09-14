@@ -14,6 +14,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MAKR: - node Properties
     var background:Background = Background()
     let hero:Hero = Hero()
+    let livesLabel:SKLabelNode = SKLabelNode()
+    let scoreLabel:SKLabelNode = SKLabelNode()
     
     //let laser:Laser = Laser()
 }
@@ -66,6 +68,36 @@ extension GameScene{
         borderFrame.friction = 0
         borderFrame.restitution = 1
         self.physicsBody = borderFrame
+        
+        
+        livesLabel.text = "Lives: 3"
+        livesLabel.fontSize = 70
+        livesLabel.fontColor = SKColor.white
+        livesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+//        livesLabel.position = CGPoint(x: -self.size.width * 0.15, y: self.size.height * 0.9)
+        livesLabel.position = CGPoint(x: -350, y: -600)
+        livesLabel.zPosition = 100
+        self.addChild(livesLabel)
+        
+        scoreLabel.text = "0"
+        scoreLabel.fontSize = 70
+        scoreLabel.fontColor = SKColor.white
+        scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
+        scoreLabel.position = CGPoint(x: 350, y: 600)
+        scoreLabel.zPosition = 100
+        self.addChild(scoreLabel)
+        
+    }
+    
+    func loseLives(){
+        
+        hero.lives -= 1
+        livesLabel.text = "Lives: \(hero.lives)"
+    }
+    
+    func addScore(){
+        hero.scores += 10
+        scoreLabel.text = "\(hero.scores)"
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -166,11 +198,15 @@ extension GameScene{
         
         if let projectileNode = contact.bodyA.node as? Projectile {
             projectileNode.removeFromParent()
+                addScore()
         } else if let projectileNode = contact.bodyB.node as? Projectile {
             projectileNode.removeFromParent()
+            addScore()
         } else if (contact.bodyA.node as? Hero) != nil {
+            loseLives()
             self.isPaused = true
         } else if (contact.bodyB.node as? Hero) != nil{
+            loseLives()
             self.isPaused = true
         }
         

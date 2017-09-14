@@ -11,6 +11,9 @@
 		4D0C7EF81F672AE4003C861C /* CategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EF71F672AE4003C861C /* CategoryEnum.swift */; };
 		4D0C7EFA1F672C8E003C861C /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EF91F672C8E003C861C /* Hero.swift */; };
 		4D0C7EFE1F688D7E003C861C /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EFD1F688D7E003C861C /* Projectile.swift */; };
+		4D0C7F001F69DBDA003C861C /* theboldfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D0C7EFF1F69DBA0003C861C /* theboldfont.ttf */; };
+		4D0C7F031F69E2A5003C861C /* SocreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7F021F69E2A5003C861C /* SocreLabel.swift */; };
+		4D0C7F051F69E2C2003C861C /* LivesLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7F041F69E2C2003C861C /* LivesLabel.swift */; };
 		4D791CE61F5F9DC000656D7B /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4D791CE51F5F9DC000656D7B /* MainMenu.sks */; };
 		4D791CE81F5F9FCA00656D7B /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D791CE71F5F9FCA00656D7B /* MainMenu.swift */; };
 		4D791CEA1F61505F00656D7B /* Elektronomia - Sky High.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */; };
@@ -35,6 +38,9 @@
 		4D0C7EF71F672AE4003C861C /* CategoryEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEnum.swift; sourceTree = "<group>"; };
 		4D0C7EF91F672C8E003C861C /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		4D0C7EFD1F688D7E003C861C /* Projectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
+		4D0C7EFF1F69DBA0003C861C /* theboldfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = theboldfont.ttf; sourceTree = "<group>"; };
+		4D0C7F021F69E2A5003C861C /* SocreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocreLabel.swift; sourceTree = "<group>"; };
+		4D0C7F041F69E2C2003C861C /* LivesLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesLabel.swift; sourceTree = "<group>"; };
 		4D791CE51F5F9DC000656D7B /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
 		4D791CE71F5F9FCA00656D7B /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Elektronomia - Sky High.mp3"; sourceTree = "<group>"; };
@@ -67,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D0C7F011F69E252003C861C /* Score and Lives */ = {
+			isa = PBXGroup;
+			children = (
+				4D0C7F021F69E2A5003C861C /* SocreLabel.swift */,
+				4D0C7F041F69E2C2003C861C /* LivesLabel.swift */,
+			);
+			name = "Score and Lives";
+			sourceTree = "<group>";
+		};
 		4DBDB5C11F5F676E007014D8 = {
 			isa = PBXGroup;
 			children = (
@@ -88,12 +103,13 @@
 			children = (
 				4DBDB5CF1F5F676E007014D8 /* GameScene.sks */,
 				4DBDB5D31F5F676E007014D8 /* GameScene.swift */,
-
 				4D0C7EFD1F688D7E003C861C /* Projectile.swift */,
 				688566D71F689AC6009FB097 /* Collision Category Enum */,
 				688566D21F689A02009FB097 /* Lasers */,
 				688566D51F689A83009FB097 /* Hero */,
 				688566D61F689A93009FB097 /* Background */,
+				4D0C7F011F69E252003C861C /* Score and Lives */,
+				4D0C7EFF1F69DBA0003C861C /* theboldfont.ttf */,
 				4D791CE51F5F9DC000656D7B /* MainMenu.sks */,
 				4D791CE71F5F9FCA00656D7B /* MainMenu.swift */,
 				4DBDB5D51F5F676E007014D8 /* GameViewController.swift */,
@@ -221,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0C7F001F69DBDA003C861C /* theboldfont.ttf in Resources */,
 				4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */,
 				4D791CE61F5F9DC000656D7B /* MainMenu.sks in Resources */,
 				4DBDB5D01F5F676E007014D8 /* GameScene.sks in Resources */,
@@ -238,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0C7F031F69E2A5003C861C /* SocreLabel.swift in Sources */,
 				4DBDB5D41F5F676E007014D8 /* GameScene.swift in Sources */,
 				4D0C7EFE1F688D7E003C861C /* Projectile.swift in Sources */,
 				688566CF1F688B09009FB097 /* LaserBeamRight.swift in Sources */,
@@ -251,6 +269,7 @@
 				4D0C7EFA1F672C8E003C861C /* Hero.swift in Sources */,
 				4D791CE81F5F9FCA00656D7B /* MainMenu.swift in Sources */,
 				4D0C7EF81F672AE4003C861C /* CategoryEnum.swift in Sources */,
+				4D0C7F051F69E2C2003C861C /* LivesLabel.swift in Sources */,
 				688566C91F677405009FB097 /* LaserHub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

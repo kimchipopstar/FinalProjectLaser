@@ -32,7 +32,11 @@
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
+		<string>theboldfont.ttf</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string></string>
 	</array>
 </dict>
 </plist>

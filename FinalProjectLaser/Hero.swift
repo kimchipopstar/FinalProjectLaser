@@ -12,10 +12,12 @@ import GameplayKit
 class Hero: SKSpriteNode {
     
     var lives:Int
+    var scores:Int
     
     init() {
         
         lives = 3
+        scores = 0
         
         let heroTexture:SKTexture = SKTexture(imageNamed: "Laser")
         super.init(texture: heroTexture, color: UIColor.clear, size: heroTexture.size())
