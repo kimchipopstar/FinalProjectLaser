@@ -14,6 +14,7 @@ import GameplayKit
 class LaserHub: SKSpriteNode {
     
     var laserBeam = LaserBeam()
+    var isOn:Bool = true
     init() {
         
         let laserHubTexture = SKTexture(imageNamed: "LaserHubLeftGreen")

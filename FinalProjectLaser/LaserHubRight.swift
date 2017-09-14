@@ -14,6 +14,7 @@ import GameplayKit
 class LaserHubRight: SKSpriteNode {
     
     var laserBeamRight = LaserBeamRight()
+    var isOn:Bool = true
     
     init() {
         

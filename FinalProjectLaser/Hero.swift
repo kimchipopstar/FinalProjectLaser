@@ -26,7 +26,8 @@ class Hero: SKSpriteNode {
         position = CGPoint(x: 0, y: -600)
         zPosition = 4
         texture = heroTexture
-        physicsBody = SKPhysicsBody(texture: heroTexture, size: size)
+//        physicsBody = SKPhysicsBody(texture: heroTexture, size: size)
+        physicsBody = SKPhysicsBody(rectangleOf: size)
         physicsBody?.categoryBitMask = CategoryEnum.heroCategory.rawValue
         physicsBody?.collisionBitMask = CategoryEnum.noCategory.rawValue
         physicsBody?.contactTestBitMask = CategoryEnum.laserBeamCategory.rawValue
