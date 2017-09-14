@@ -24,8 +24,8 @@ extension GameScene{
     
     override func didMove(to view: SKView) {
         
-        //        Background Music
-        //        setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
+//                Background Music
+//                setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
         
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
@@ -61,7 +61,7 @@ extension GameScene{
         }
 
 
-        let waitAction = SKAction.wait(forDuration: 2.0, withRange: 2.0)
+        let waitAction = SKAction.wait(forDuration: 1.5, withRange: 2.0)
         let spawnLaserAction = SKAction.run(randomLaserSelection)
         let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction]))
         run(spawnEntireAction)

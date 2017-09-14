@@ -13,12 +13,12 @@ class Projectile: SKSpriteNode {
     
     init(){
         
-        let projectileTexture = SKTexture(imageNamed: "SoccerBall")
+        let projectileTexture = SKTexture(imageNamed: "CannonProjectile2")
         super.init(texture: projectileTexture, color: UIColor.clear, size: projectileTexture.size())
         
         position = CGPoint(x: 0, y: -600)
-        size = CGSize(width: 30, height: 30)
-        physicsBody = SKPhysicsBody(circleOfRadius: self.size.width / 2)
+        size = CGSize(width: 55, height: 55)
+        physicsBody = SKPhysicsBody(circleOfRadius: self.size.width / 2.8)
         physicsBody?.affectedByGravity = true
         zPosition = 3
         physicsBody?.categoryBitMask = CategoryEnum.smallBallCategory.rawValue
