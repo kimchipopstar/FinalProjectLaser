@@ -40,7 +40,7 @@ class LaserBeamRight: SKSpriteNode {
         physicsBody = SKPhysicsBody(texture: laserBeamTexture, size: size)
         physicsBody?.categoryBitMask = CategoryEnum.laserBeamCategory.rawValue
         physicsBody?.collisionBitMask = CategoryEnum.noCategory.rawValue
-        physicsBody?.contactTestBitMask = CategoryEnum.smallBallCategory.rawValue | CategoryEnum.heroCategory.rawValue
+        physicsBody?.contactTestBitMask = CategoryEnum.projectileCategory.rawValue | CategoryEnum.heroCategory.rawValue
         physicsBody?.affectedByGravity = false
         physicsBody?.isDynamic = false
         physicsBody?.pinned = true

@@ -20,10 +20,10 @@ class Projectile: SKSpriteNode {
         physicsBody = SKPhysicsBody(circleOfRadius: self.size.width / 2.8)
         physicsBody?.affectedByGravity = true
         zPosition = 3
-        physicsBody?.categoryBitMask = CategoryEnum.smallBallCategory.rawValue
-        physicsBody?.collisionBitMask  = CategoryEnum.smallBallCategory.rawValue
+        physicsBody?.categoryBitMask = CategoryEnum.projectileCategory.rawValue
+        physicsBody?.collisionBitMask  = CategoryEnum.projectileCategory.rawValue
         physicsBody?.contactTestBitMask = CategoryEnum.laserBeamCategory.rawValue | CategoryEnum.laserHubCategory.rawValue
-        name = "SmallBall"
+        name = "projectile"
     }
     
     required init?(coder aDecoder: NSCoder) {

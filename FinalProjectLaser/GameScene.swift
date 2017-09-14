@@ -112,11 +112,11 @@ extension GameScene{
             let location = touch.location(in: self)
             
             
-            let smallBall = hero.createProjectile()
+            let projectile = hero.createProjectile()
             
-            self.addChild(smallBall)
+            self.addChild(projectile)
             
-            hero.launchTowards(location: location, spriteNode:smallBall)
+            hero.launchTowards(location: location, spriteNode:projectile)
         }
     }
 }
@@ -140,7 +140,7 @@ extension GameScene{
             body2 = contact.bodyA
         }
         
-        if body1.categoryBitMask == CategoryEnum.laserHubCategory.rawValue && body2.categoryBitMask == CategoryEnum.smallBallCategory.rawValue {
+        if body1.categoryBitMask == CategoryEnum.laserHubCategory.rawValue && body2.categoryBitMask == CategoryEnum.projectileCategory.rawValue {
             
             if let laserLeftHubNode = contact.bodyA.node as? LaserHub{
                 
@@ -163,7 +163,7 @@ extension GameScene{
         }
         
 
-        if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.smallBallCategory.rawValue{
+        if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.projectileCategory.rawValue{
             
             guard let node = body2.node as? SKSpriteNode else { return }
             
@@ -213,7 +213,7 @@ extension GameScene {
     func removeExessProjectiles() {
         
         for temp in self.children {
-            if temp.name == "SmallBall" && temp.position.y < -600 {
+            if temp.name == "projectile" && temp.position.y < -600 {
                 temp.removeFromParent()
                 print(temp.position.y)
             }
