@@ -146,23 +146,22 @@ extension GameScene{
         if body1.categoryBitMask == CategoryEnum.laserHubCategory.rawValue && body2.categoryBitMask == CategoryEnum.smallBallCategory.rawValue {
             
             if let laserLeftHubNode = contact.bodyA.node as? LaserHub{
-                laserLeftHubNode.laserBeam.removeFromParent()
                 
-                if laserLeftHubNode.texture == SKTexture(imageNamed: "LaserHubLeftGreen") {
-                 addScore()
-                } else {
-                    laserLeftHubNode.texture = SKTexture(imageNamed: "LaserHubLeftRed")
-                }
-                
-            } else if let laserRightHubNode = contact.bodyA.node as? LaserHubRight{
-                laserRightHubNode.laserBeamRight.removeFromParent()
-                
-                if laserRightHubNode.texture == SKTexture(imageNamed: "LaserHubRightGreen"){
+                if laserLeftHubNode.isOn == true{
+                    laserLeftHubNode.laserBeam.removeFromParent()
                     addScore()
-                } else {
-                    laserRightHubNode.texture = SKTexture(imageNamed: "LaserHubRightRed")
+                    laserLeftHubNode.texture = SKTexture(imageNamed: "LaserHubLeftRed")
+                    laserLeftHubNode.isOn = false
                 }
+
+            } else if let laserRightHubNode = contact.bodyA.node as? LaserHubRight{
                 
+                if laserRightHubNode.isOn == true{
+                    laserRightHubNode.laserBeamRight.removeFromParent()
+                    addScore()
+                    laserRightHubNode.texture = SKTexture(imageNamed: "LaserHubRightRed")
+                    laserRightHubNode.isOn = false
+                }
             }
         }
         
