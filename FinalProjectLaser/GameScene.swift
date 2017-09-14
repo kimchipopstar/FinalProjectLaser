@@ -26,7 +26,7 @@ extension GameScene{
         
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
-        view.showsPhysics = true
+        view.showsPhysics = false
         
 
         
@@ -35,7 +35,7 @@ extension GameScene{
         // MARK: - HELLO
         
         
-        func spawnLasers()
+        func spawnLeftLasers()
         {
             let laser = Laser()
             self.addChild(laser.laserHub)
@@ -47,14 +47,23 @@ extension GameScene{
             self.addChild(rightLaser.laserHubRight)
         }
         
-        
+        func randomLaserSelection()
+        {
+            let selection = Int(arc4random_uniform(2)+1)
+            
+            if selection == 1 {
+                spawnLeftLasers()
+            }else{
+                spawnRightLasers()
+            }
+        }
 
-        let waitAction = SKAction.wait(forDuration: 6)
-        let spawnLaserAction = SKAction.run(spawnLasers)
-        let spawnRightLaserAction = SKAction.run(spawnRightLasers)
-        let entireAction = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction, spawnRightLaserAction, waitAction]))
-        run(entireAction)
+        let waitAction = SKAction.wait(forDuration: 2.0, withRange: 2.0)
+        let spawnLaserAction = SKAction.run(randomLaserSelection)
+        let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction]))
+        run(spawnEntireAction)
 
+    
         
 //        hero.setUpHero()
         
@@ -155,12 +164,16 @@ extension GameScene{
         
         if let laserNode = contact.bodyA.node as? LaserHub {
             laserNode.laserBeam.removeFromParent()
+            laserNode.texture = SKTexture(imageNamed: "LaserHubLeftRed")
         } else if let laserNode = contact.bodyB.node as? LaserHub {
             laserNode.laserBeam.removeFromParent()
+            laserNode.texture = SKTexture(imageNamed: "LaserHubLeftRed")
         } else if let laserBeamRightNode = contact.bodyA.node as? LaserHubRight {
             laserBeamRightNode.laserBeamRight.removeFromParent()
+            laserBeamRightNode.texture = SKTexture(imageNamed: "LaserHubRightRed")
         } else if let laserBeamRightNode = contact.bodyB.node as? LaserHubRight {
             laserBeamRightNode.laserBeamRight.removeFromParent()
+            laserBeamRightNode.texture = SKTexture(imageNamed: "LaserHubRightRed")
         }
     }
     

@@ -35,7 +35,7 @@ class Background: SKSpriteNode {
         {
             (node, error) in
             
-            node.position.y -= 3
+            node.position.y -= 6
             
             if node.position.y < -((scene.scene?.size.height)!)
             {

@@ -18,6 +18,14 @@ class LaserBeamRight: SKSpriteNode {
         let laserBeamTexture = SKTexture(imageNamed: "LaserBeam")
         super.init(texture: laserBeamTexture, color: UIColor.clear, size: laserBeamTexture.size())
         
+        if let sparks = SKEmitterNode(fileNamed: "RightLaserSpark") {
+            sparks.particleSize = CGSize(width: 0, height: 0)
+            sparks.position = CGPoint(x: -1200, y: 0)
+            sparks.zPosition = 3
+            sparks.isHidden = false
+            self.addChild(sparks)
+        }
+        
         zPosition = 2
         size.width = 2380
         size.height = 60

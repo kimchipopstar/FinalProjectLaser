@@ -22,6 +22,8 @@
 		4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5D71F5F676E007014D8 /* Main.storyboard */; };
 		4DBDB5DB1F5F676E007014D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */; };
 		4DBDB5DE1F5F676E007014D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5DC1F5F676E007014D8 /* LaunchScreen.storyboard */; };
+		68775FC81F6A150A00102197 /* LeftLaserSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 68775FC71F6A150A00102197 /* LeftLaserSpark.sks */; };
+		68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 68775FC91F6A19C100102197 /* RightLaserSpark.sks */; };
 		688566C71F67493E009FB097 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688566C61F67493E009FB097 /* Background.swift */; };
 		688566C91F677405009FB097 /* LaserHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688566C81F677405009FB097 /* LaserHub.swift */; };
 		688566CB1F677415009FB097 /* LaserBeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688566CA1F677415009FB097 /* LaserBeam.swift */; };
@@ -48,6 +50,8 @@
 		4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBDB5DD1F5F676E007014D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBDB5DF1F5F676E007014D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68775FC71F6A150A00102197 /* LeftLaserSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LeftLaserSpark.sks; sourceTree = "<group>"; };
+		68775FC91F6A19C100102197 /* RightLaserSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RightLaserSpark.sks; sourceTree = "<group>"; };
 		688566C61F67493E009FB097 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		688566C81F677405009FB097 /* LaserHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserHub.swift; sourceTree = "<group>"; };
 		688566CA1F677415009FB097 /* LaserBeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserBeam.swift; sourceTree = "<group>"; };
@@ -88,12 +92,11 @@
 			children = (
 				4DBDB5CF1F5F676E007014D8 /* GameScene.sks */,
 				4DBDB5D31F5F676E007014D8 /* GameScene.swift */,
-
-				4D0C7EFD1F688D7E003C861C /* Projectile.swift */,
 				688566D71F689AC6009FB097 /* Collision Category Enum */,
 				688566D21F689A02009FB097 /* Lasers */,
 				688566D51F689A83009FB097 /* Hero */,
 				688566D61F689A93009FB097 /* Background */,
+				68775FC41F6A096D00102197 /* Particles */,
 				4D791CE51F5F9DC000656D7B /* MainMenu.sks */,
 				4D791CE71F5F9FCA00656D7B /* MainMenu.swift */,
 				4DBDB5D51F5F676E007014D8 /* GameViewController.swift */,
@@ -106,6 +109,15 @@
 				4DBDB5DF1F5F676E007014D8 /* Info.plist */,
 			);
 			path = FinalProjectLaser;
+			sourceTree = "<group>";
+		};
+		68775FC41F6A096D00102197 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				68775FC71F6A150A00102197 /* LeftLaserSpark.sks */,
+				68775FC91F6A19C100102197 /* RightLaserSpark.sks */,
+			);
+			name = Particles;
 			sourceTree = "<group>";
 		};
 		688566D21F689A02009FB097 /* Lasers */ = {
@@ -121,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				4D0C7EF31F6724E6003C861C /* Laser.swift */,
-				688566CA1F677415009FB097 /* LaserBeam.swift */,
 				688566C81F677405009FB097 /* LaserHub.swift */,
+				688566CA1F677415009FB097 /* LaserBeam.swift */,
 			);
 			name = Left;
 			sourceTree = "<group>";
@@ -141,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				4D0C7EF91F672C8E003C861C /* Hero.swift */,
+				4D0C7EFD1F688D7E003C861C /* Projectile.swift */,
 			);
 			name = Hero;
 			sourceTree = "<group>";
@@ -222,10 +235,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */,
+				68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */,
 				4D791CE61F5F9DC000656D7B /* MainMenu.sks in Resources */,
 				4DBDB5D01F5F676E007014D8 /* GameScene.sks in Resources */,
 				4DBDB5DB1F5F676E007014D8 /* Assets.xcassets in Resources */,
 				4D791CEA1F61505F00656D7B /* Elektronomia - Sky High.mp3 in Resources */,
+				68775FC81F6A150A00102197 /* LeftLaserSpark.sks in Resources */,
 				4DBDB5DE1F5F676E007014D8 /* LaunchScreen.storyboard in Resources */,
 				4DBDB5D21F5F676E007014D8 /* Actions.sks in Resources */,
 			);
