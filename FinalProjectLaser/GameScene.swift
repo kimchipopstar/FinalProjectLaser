@@ -132,11 +132,16 @@ extension GameScene{
         
         if body1.categoryBitMask == CategoryEnum.laserHubCategory.rawValue && body2.categoryBitMask == CategoryEnum.smallBallCategory.rawValue {
             
-            let laserHubNode = body1 as? LaserHub
-            laserHubNode?.laserBeam.removeFromParent()
+            if let laserLeftHubNode = contact.bodyA.node as? LaserHub{
+                laserLeftHubNode.laserBeam.removeFromParent()
+                laserLeftHubNode.texture = SKTexture(imageNamed: "LaserHubLeftRed")
+            } else if let laserRightHubNode = contact.bodyA.node as? LaserHubRight{
+                laserRightHubNode.laserBeamRight.removeFromParent()
+                laserRightHubNode.texture = SKTexture(imageNamed: "LaserHubRightRed")
+            }
             
-//            body1.node?.removeAllChildren()
-//            laserNode.texture = SKTexture(imageNamed: “LaserHubLeftRed”)
+
+            
         }
         
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.smallBallCategory.rawValue{
@@ -148,82 +153,8 @@ extension GameScene{
             self.isPaused = true
         }
         
-        //        let gameScenario = scenario(contact)
-//        switch gameScenario {
-//        case .hubContactProjectile:
-//            hubContactsProjectile(contact)
-//            break
-//        case .projectileContactLaserBeam:
-//            projectileOrHeroContactLaserBeam(contact)
-//            break
-////        case .laserBeamContactHero:
-////            laserBeamContactHero(contact)
-////            break
-//        default:
-//            break
+
     }
-//    enum GameSenario {
-//        case hubContactProjectile
-//        case projectileContactLaserBeam
-//        case laserBeamContactHero
-//        case none
-//    }
-//    func scenario(_ contact: SKPhysicsContact) -> GameSenario {
-//        
-//        let categoryA:UInt32! = contact.bodyA.categoryBitMask
-//        let categoryB:UInt32! = contact.bodyB.categoryBitMask
-//        
-//        if categoryA == CategoryEnum.laserHubCategory.rawValue || categoryB == CategoryEnum.laserHubCategory.rawValue {
-//            return .hubContactProjectile
-//        } else if categoryA == CategoryEnum.laserBeamCategory.rawValue || categoryB == CategoryEnum.laserBeamCategory.rawValue{
-//            return .projectileContactLaserBeam
-//        }
-////        } else if categoryA == CategoryEnum.heroCategory.rawValue || categoryB == CategoryEnum.heroCategory.rawValue{
-////            return .laserBeamContactHero
-////        }
-//        else {
-//            return .none
-//        }
-//        
-//    }
-//    func hubContactsProjectile(_ contact: SKPhysicsContact) {
-//        
-//        if let laserNode = contact.bodyA.node as? LaserHub {
-//            laserNode.laserBeam.removeFromParent()
-//        } else if let laserNode = contact.bodyB.node as? LaserHub {
-//            laserNode.laserBeam.removeFromParent()
-//        } else if let laserBeamRightNode = contact.bodyA.node as? LaserHubRight {
-//            laserBeamRightNode.laserBeamRight.removeFromParent()
-//        } else if let laserBeamRightNode = contact.bodyB.node as? LaserHubRight {
-//            laserBeamRightNode.laserBeamRight.removeFromParent()
-//        }
-//    }
-//    func projectileOrHeroContactLaserBeam(_ contact: SKPhysicsContact){
-//        
-//        if let projectileNode = contact.bodyA.node as? Projectile {
-//            projectileNode.removeFromParent()
-//            addScore()
-//        } else if let projectileNode = contact.bodyB.node as? Projectile {
-//            projectileNode.removeFromParent()
-//            addScore()
-//        } else if (contact.bodyA.node as? Hero) != nil {
-//            loseLives()
-//            self.isPaused = true
-//        } else if (contact.bodyB.node as? Hero) != nil{
-//            loseLives()
-//            self.isPaused = true
-//        }
-    
-//    }
-    
-    // Exclusive Game Scenarios:
-    
-    // First - Determine which of 1-3 scenarios we should enter.
-    // Second - Enter one of scenario 1-3.
-    
-    // 1 - If hub contacts projectile, then laserBeam goes off
-    // 2 - if projectile contacts laser, then projectile disapears
-    // 3 - If laserBeam contacts with hero, games pause
 }
 
 
