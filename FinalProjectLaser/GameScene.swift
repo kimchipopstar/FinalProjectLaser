@@ -118,74 +118,103 @@ extension GameScene{
 extension GameScene{
     
     func didBegin(_ contact: SKPhysicsContact) {
-        let gameScenario = scenario(contact)
-        switch gameScenario {
-        case .hubContactProjectile:
-            hubContactsProjectile(contact)
-            break
-        case .projectileContactLaserBeam:
-            projectileOrHeroContactLaserBeam(contact)
-            break
-//        case .laserBeamContactHero:
-//            laserBeamContactHero(contact)
+
+        var body1 = SKPhysicsBody()
+        var body2 = SKPhysicsBody()
+        
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            body1 = contact.bodyA
+            body2 = contact.bodyB
+        } else {
+            body1 = contact.bodyB
+            body2 = contact.bodyA
+        }
+        
+        if body1.categoryBitMask == CategoryEnum.laserHubCategory.rawValue && body2.categoryBitMask == CategoryEnum.smallBallCategory.rawValue {
+            
+            let laserHubNode = body1 as? LaserHub
+            laserHubNode?.laserBeam.removeFromParent()
+            
+//            body1.node?.removeAllChildren()
+//            laserNode.texture = SKTexture(imageNamed: “LaserHubLeftRed”)
+        }
+        
+        if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.smallBallCategory.rawValue{
+            body2.node?.removeFromParent()
+        }
+        
+        if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.heroCategory.rawValue {
+            
+            self.isPaused = true
+        }
+        
+        //        let gameScenario = scenario(contact)
+//        switch gameScenario {
+//        case .hubContactProjectile:
+//            hubContactsProjectile(contact)
 //            break
-        default:
-            break
-        }
+//        case .projectileContactLaserBeam:
+//            projectileOrHeroContactLaserBeam(contact)
+//            break
+////        case .laserBeamContactHero:
+////            laserBeamContactHero(contact)
+////            break
+//        default:
+//            break
     }
-    enum GameSenario {
-        case hubContactProjectile
-        case projectileContactLaserBeam
-        case laserBeamContactHero
-        case none
-    }
-    func scenario(_ contact: SKPhysicsContact) -> GameSenario {
-        
-        let categoryA:UInt32! = contact.bodyA.categoryBitMask
-        let categoryB:UInt32! = contact.bodyB.categoryBitMask
-        
-        if categoryA == CategoryEnum.laserHubCategory.rawValue || categoryB == CategoryEnum.laserHubCategory.rawValue {
-            return .hubContactProjectile
-        } else if categoryA == CategoryEnum.laserBeamCategory.rawValue || categoryB == CategoryEnum.laserBeamCategory.rawValue{
-            return .projectileContactLaserBeam
-        }
-//        } else if categoryA == CategoryEnum.heroCategory.rawValue || categoryB == CategoryEnum.heroCategory.rawValue{
-//            return .laserBeamContactHero
+//    enum GameSenario {
+//        case hubContactProjectile
+//        case projectileContactLaserBeam
+//        case laserBeamContactHero
+//        case none
+//    }
+//    func scenario(_ contact: SKPhysicsContact) -> GameSenario {
+//        
+//        let categoryA:UInt32! = contact.bodyA.categoryBitMask
+//        let categoryB:UInt32! = contact.bodyB.categoryBitMask
+//        
+//        if categoryA == CategoryEnum.laserHubCategory.rawValue || categoryB == CategoryEnum.laserHubCategory.rawValue {
+//            return .hubContactProjectile
+//        } else if categoryA == CategoryEnum.laserBeamCategory.rawValue || categoryB == CategoryEnum.laserBeamCategory.rawValue{
+//            return .projectileContactLaserBeam
 //        }
-        else {
-            return .none
-        }
-        
-    }
-    func hubContactsProjectile(_ contact: SKPhysicsContact) {
-        
-        if let laserNode = contact.bodyA.node as? LaserHub {
-            laserNode.laserBeam.removeFromParent()
-        } else if let laserNode = contact.bodyB.node as? LaserHub {
-            laserNode.laserBeam.removeFromParent()
-        } else if let laserBeamRightNode = contact.bodyA.node as? LaserHubRight {
-            laserBeamRightNode.laserBeamRight.removeFromParent()
-        } else if let laserBeamRightNode = contact.bodyB.node as? LaserHubRight {
-            laserBeamRightNode.laserBeamRight.removeFromParent()
-        }
-    }
-    func projectileOrHeroContactLaserBeam(_ contact: SKPhysicsContact){
-        
-        if let projectileNode = contact.bodyA.node as? Projectile {
-            projectileNode.removeFromParent()
-            addScore()
-        } else if let projectileNode = contact.bodyB.node as? Projectile {
-            projectileNode.removeFromParent()
-            addScore()
-        } else if (contact.bodyA.node as? Hero) != nil {
-            loseLives()
-            self.isPaused = true
-        } else if (contact.bodyB.node as? Hero) != nil{
-            loseLives()
-            self.isPaused = true
-        }
-        
-    }
+////        } else if categoryA == CategoryEnum.heroCategory.rawValue || categoryB == CategoryEnum.heroCategory.rawValue{
+////            return .laserBeamContactHero
+////        }
+//        else {
+//            return .none
+//        }
+//        
+//    }
+//    func hubContactsProjectile(_ contact: SKPhysicsContact) {
+//        
+//        if let laserNode = contact.bodyA.node as? LaserHub {
+//            laserNode.laserBeam.removeFromParent()
+//        } else if let laserNode = contact.bodyB.node as? LaserHub {
+//            laserNode.laserBeam.removeFromParent()
+//        } else if let laserBeamRightNode = contact.bodyA.node as? LaserHubRight {
+//            laserBeamRightNode.laserBeamRight.removeFromParent()
+//        } else if let laserBeamRightNode = contact.bodyB.node as? LaserHubRight {
+//            laserBeamRightNode.laserBeamRight.removeFromParent()
+//        }
+//    }
+//    func projectileOrHeroContactLaserBeam(_ contact: SKPhysicsContact){
+//        
+//        if let projectileNode = contact.bodyA.node as? Projectile {
+//            projectileNode.removeFromParent()
+//            addScore()
+//        } else if let projectileNode = contact.bodyB.node as? Projectile {
+//            projectileNode.removeFromParent()
+//            addScore()
+//        } else if (contact.bodyA.node as? Hero) != nil {
+//            loseLives()
+//            self.isPaused = true
+//        } else if (contact.bodyB.node as? Hero) != nil{
+//            loseLives()
+//            self.isPaused = true
+//        }
+    
+//    }
     
     // Exclusive Game Scenarios:
     
