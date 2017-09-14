@@ -165,7 +165,9 @@ extension GameScene{
 
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.smallBallCategory.rawValue{
             
-            projectileExplosion(projectileNode: body2.node as! SKSpriteNode)
+            guard let node = body2.node as? SKSpriteNode else { return }
+            
+            projectileExplosion(projectileNode: node)
             body2.node?.removeFromParent()
             
         }
@@ -175,7 +177,7 @@ extension GameScene{
             if hero.lives > 0{
                 loseLives()
             } else {
-                self.isPaused = true
+//                self.isPaused = true
             }
         }
         

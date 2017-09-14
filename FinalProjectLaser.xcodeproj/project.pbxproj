@@ -11,7 +11,6 @@
 		4D0C7EF81F672AE4003C861C /* CategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EF71F672AE4003C861C /* CategoryEnum.swift */; };
 		4D0C7EFA1F672C8E003C861C /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EF91F672C8E003C861C /* Hero.swift */; };
 		4D0C7EFE1F688D7E003C861C /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EFD1F688D7E003C861C /* Projectile.swift */; };
-		4D0C7F001F69DBDA003C861C /* theboldfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D0C7EFF1F69DBA0003C861C /* theboldfont.ttf */; };
 		4D0C7F031F69E2A5003C861C /* SocreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7F021F69E2A5003C861C /* SocreLabel.swift */; };
 		4D0C7F051F69E2C2003C861C /* LivesLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7F041F69E2C2003C861C /* LivesLabel.swift */; };
 		4D791CE61F5F9DC000656D7B /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4D791CE51F5F9DC000656D7B /* MainMenu.sks */; };
@@ -40,7 +39,6 @@
 		4D0C7EF71F672AE4003C861C /* CategoryEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEnum.swift; sourceTree = "<group>"; };
 		4D0C7EF91F672C8E003C861C /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		4D0C7EFD1F688D7E003C861C /* Projectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
-		4D0C7EFF1F69DBA0003C861C /* theboldfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = theboldfont.ttf; sourceTree = "<group>"; };
 		4D0C7F021F69E2A5003C861C /* SocreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocreLabel.swift; sourceTree = "<group>"; };
 		4D0C7F041F69E2C2003C861C /* LivesLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesLabel.swift; sourceTree = "<group>"; };
 		4D791CE51F5F9DC000656D7B /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				688566D51F689A83009FB097 /* Hero */,
 				688566D61F689A93009FB097 /* Background */,
 				4D0C7F011F69E252003C861C /* Score and Lives */,
-				4D0C7EFF1F69DBA0003C861C /* theboldfont.ttf */,
 				68775FC41F6A096D00102197 /* Particles */,
 				4D791CE51F5F9DC000656D7B /* MainMenu.sks */,
 				4D791CE71F5F9FCA00656D7B /* MainMenu.swift */,
@@ -253,7 +250,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D0C7F001F69DBDA003C861C /* theboldfont.ttf in Resources */,
 				4DDF1EE61F6B31BE00B84C62 /* ProjectileSpark.sks in Resources */,
 				4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */,
 				68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */,
