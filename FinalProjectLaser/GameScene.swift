@@ -65,10 +65,7 @@ extension GameScene{
         let spawnLaserAction = SKAction.run(randomLaserSelection)
         let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction]))
         run(spawnEntireAction)
-
-
-    
-        
+           
 //        hero.setUpHero()
         
         self.addChild(hero)
@@ -167,7 +164,10 @@ extension GameScene{
         
 
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.smallBallCategory.rawValue{
+            
+            projectileExplosion(projectileNode: body2.node as! SKSpriteNode)
             body2.node?.removeFromParent()
+            
         }
 
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.heroCategory.rawValue {
@@ -180,6 +180,19 @@ extension GameScene{
         }
         
 
+    }
+    
+    func projectileExplosion(projectileNode:SKSpriteNode){
+        
+        let explosion = SKEmitterNode(fileNamed: "ProjectileSpark")
+        explosion?.zPosition = 3
+        explosion?.position = projectileNode.position
+        self.addChild(explosion!)
+        
+        self.run(SKAction.wait(forDuration: 2)){
+            explosion?.removeFromParent()
+        }
+        
     }
 }
 

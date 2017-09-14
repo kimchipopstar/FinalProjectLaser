@@ -24,7 +24,7 @@
 		4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5D71F5F676E007014D8 /* Main.storyboard */; };
 		4DBDB5DB1F5F676E007014D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */; };
 		4DBDB5DE1F5F676E007014D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5DC1F5F676E007014D8 /* LaunchScreen.storyboard */; };
-		4DDF1EDF1F6B2B7800B84C62 /* ProjectileSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EDE1F6B2B7800B84C62 /* ProjectileSmoke.sks */; };
+		4DDF1EE61F6B31BE00B84C62 /* ProjectileSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EE41F6B31BE00B84C62 /* ProjectileSpark.sks */; };
 		68775FC81F6A150A00102197 /* LeftLaserSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 68775FC71F6A150A00102197 /* LeftLaserSpark.sks */; };
 		68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 68775FC91F6A19C100102197 /* RightLaserSpark.sks */; };
 		688566C71F67493E009FB097 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688566C61F67493E009FB097 /* Background.swift */; };
@@ -56,7 +56,7 @@
 		4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBDB5DD1F5F676E007014D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBDB5DF1F5F676E007014D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DDF1EDE1F6B2B7800B84C62 /* ProjectileSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ProjectileSmoke.sks; sourceTree = "<group>"; };
+		4DDF1EE41F6B31BE00B84C62 /* ProjectileSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = ProjectileSpark.sks; path = ../ProjectileSpark.sks; sourceTree = "<group>"; };
 		68775FC71F6A150A00102197 /* LeftLaserSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LeftLaserSpark.sks; sourceTree = "<group>"; };
 		68775FC91F6A19C100102197 /* RightLaserSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RightLaserSpark.sks; sourceTree = "<group>"; };
 		688566C61F67493E009FB097 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
@@ -108,7 +108,6 @@
 			children = (
 				4DBDB5CF1F5F676E007014D8 /* GameScene.sks */,
 				4DBDB5D31F5F676E007014D8 /* GameScene.swift */,
-				4DDF1EDE1F6B2B7800B84C62 /* ProjectileSmoke.sks */,
 				688566D71F689AC6009FB097 /* Collision Category Enum */,
 				688566D21F689A02009FB097 /* Lasers */,
 				688566D51F689A83009FB097 /* Hero */,
@@ -135,6 +134,7 @@
 			children = (
 				68775FC71F6A150A00102197 /* LeftLaserSpark.sks */,
 				68775FC91F6A19C100102197 /* RightLaserSpark.sks */,
+				4DDF1EE41F6B31BE00B84C62 /* ProjectileSpark.sks */,
 			);
 			name = Particles;
 			sourceTree = "<group>";
@@ -254,10 +254,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D0C7F001F69DBDA003C861C /* theboldfont.ttf in Resources */,
+				4DDF1EE61F6B31BE00B84C62 /* ProjectileSpark.sks in Resources */,
 				4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */,
 				68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */,
 				4D791CE61F5F9DC000656D7B /* MainMenu.sks in Resources */,
-				4DDF1EDF1F6B2B7800B84C62 /* ProjectileSmoke.sks in Resources */,
 				4DBDB5D01F5F676E007014D8 /* GameScene.sks in Resources */,
 				4DBDB5DB1F5F676E007014D8 /* Assets.xcassets in Resources */,
 				4D791CEA1F61505F00656D7B /* Elektronomia - Sky High.mp3 in Resources */,

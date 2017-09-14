@@ -26,6 +26,13 @@ class LaserBeamRight: SKSpriteNode {
             self.addChild(sparks)
         }
         
+        if let smokes = SKEmitterNode(fileNamed: "LaserBeamSomke"){
+            smokes.zPosition = 2
+            smokes.position = CGPoint(x: -1200, y: 0)
+            smokes.isHidden = false
+            self.addChild(smokes)
+        }
+        
         zPosition = 2
         size.width = 2380
         size.height = 60

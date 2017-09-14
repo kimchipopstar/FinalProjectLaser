@@ -12,7 +12,6 @@ import GameplayKit
 class Projectile: SKSpriteNode {
     
     init(){
-        
         let projectileTexture = SKTexture(imageNamed: "CannonProjectile2")
         super.init(texture: projectileTexture, color: UIColor.clear, size: projectileTexture.size())
         
@@ -25,7 +24,6 @@ class Projectile: SKSpriteNode {
         physicsBody?.collisionBitMask  = CategoryEnum.smallBallCategory.rawValue
         physicsBody?.contactTestBitMask = CategoryEnum.laserBeamCategory.rawValue | CategoryEnum.laserHubCategory.rawValue
         name = "SmallBall"
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
