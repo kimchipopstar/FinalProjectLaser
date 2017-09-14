@@ -30,7 +30,7 @@ extension GameScene{
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
 
-        view.showsPhysics = false
+        view.showsPhysics = true
 
         
 
@@ -64,7 +64,7 @@ extension GameScene{
         let waitAction = SKAction.wait(forDuration: 2.0, withRange: 2.0)
         let spawnLaserAction = SKAction.run(randomLaserSelection)
         let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction]))
-        run(spawnEntireAction)
+//        run(spawnEntireAction)
 
 
     
