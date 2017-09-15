@@ -26,6 +26,8 @@ class LaserRight: SKSpriteNode {
         }
     }
     
+    
+    
     static func removeExessLasers(scene:SKScene) {
         
         for temp in scene.children {

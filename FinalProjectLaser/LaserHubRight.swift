@@ -41,4 +41,10 @@ class LaserHubRight: SKSpriteNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func moveRightLaser(){
+        
+        position = CGPoint(x: 320, y: -700.1)
+        
+    }
 }

@@ -48,6 +48,8 @@ extension GameScene{
             let rightLaser = LaserRight()
             self.addChild(rightLaser.laserHubRight)
         }
+
+
         
         func randomLaserSelection()
         {
@@ -59,16 +61,15 @@ extension GameScene{
                 spawnRightLasers()
             }
         }
-
-
+        
+        
+        
         let waitAction = SKAction.wait(forDuration: 0.8, withRange: 0.9)
 //        let time:TimeInterval = 0.4
 //        let waitAction = SKAction.wait(forDuration: time)
         let spawnLaserAction = SKAction.run(randomLaserSelection)
         let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction]))
         run(spawnEntireAction)
-           
-//        hero.setUpHero()
         
         self.addChild(hero)
         
@@ -103,6 +104,7 @@ extension GameScene{
         background.moveBackgrounds(scene:self, hero:hero)
         Laser.moveLaser(scene:self, hero:hero)
         LaserRight.moveLaser(scene:self, hero:hero)
+
         removeExessProjectiles()
         Laser.removeExessLasers(scene: self)
         LaserRight.removeExessLasers(scene: self)

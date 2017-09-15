@@ -14,7 +14,7 @@ import GameplayKit
 class Laser: SKSpriteNode {
     
     var laserHub:SKSpriteNode = LaserHub()
-    static var gameSpeed:CGFloat = 6
+    
 
     static func moveLaser(scene:SKScene, hero:Hero) {
             
@@ -26,6 +26,8 @@ class Laser: SKSpriteNode {
             
         }
     }
+    
+     
     
     static func removeExessLasers(scene:SKScene) {
         
