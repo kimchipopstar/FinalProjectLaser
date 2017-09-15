@@ -15,13 +15,13 @@ class LaserRight: SKSpriteNode {
     
     var laserHubRight:SKSpriteNode = LaserHubRight()
     
-    static func moveLaser(scene:SKScene) {
+    static func moveLaser(scene:SKScene, hero:Hero) {
         
         scene.enumerateChildNodes(withName:"rightLaser")
         {
             (node, error) in
             
-            node.position.y -= 6
+            node.position.y -= 8
             
         }
     }

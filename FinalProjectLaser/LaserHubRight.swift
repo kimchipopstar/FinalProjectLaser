@@ -29,7 +29,7 @@ class LaserHubRight: SKSpriteNode {
 //        physicsBody = SKPhysicsBody(texture: laserHubTexture, size:size)
         physicsBody?.categoryBitMask = CategoryEnum.laserHubCategory.rawValue
         physicsBody?.collisionBitMask = CategoryEnum.noCategory.rawValue
-        physicsBody?.contactTestBitMask = CategoryEnum.smallBallCategory.rawValue
+        physicsBody?.contactTestBitMask = CategoryEnum.projectileCategory.rawValue
         physicsBody?.affectedByGravity = false
         physicsBody?.isDynamic = false
         

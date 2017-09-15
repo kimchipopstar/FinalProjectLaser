@@ -16,21 +16,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let hero:Hero = Hero()
     let livesLabel:LivesLabel = LivesLabel()
     let scoreLabel:ScoreLabel = ScoreLabel()
-    
-    //let laser:Laser = Laser()
+
 }
 
 extension GameScene{
     
     override func didMove(to view: SKView) {
         
-        //        Background Music
-        //        setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
+        //Background Music
+//                setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
         
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
-
-        view.showsPhysics = false
+        view.showsPhysics = true
 
         
 
@@ -41,6 +39,8 @@ extension GameScene{
         {
             let laser = Laser()
             self.addChild(laser.laserHub)
+            
+            
         }
         
         func spawnRightLasers()
@@ -61,14 +61,13 @@ extension GameScene{
         }
 
 
-        let waitAction = SKAction.wait(forDuration: 2.0, withRange: 2.0)
+        let waitAction = SKAction.wait(forDuration: 0.8, withRange: 0.9)
+//        let time:TimeInterval = 0.4
+//        let waitAction = SKAction.wait(forDuration: time)
         let spawnLaserAction = SKAction.run(randomLaserSelection)
         let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction]))
         run(spawnEntireAction)
-
-
-    
-        
+           
 //        hero.setUpHero()
         
         self.addChild(hero)
@@ -101,9 +100,9 @@ extension GameScene{
     
     override func update(_ currentTime: TimeInterval) {
         
-        background.moveBackgrounds(scene:self)
-        Laser.moveLaser(scene:self)
-        LaserRight.moveLaser(scene:self)
+        background.moveBackgrounds(scene:self, hero:hero)
+        Laser.moveLaser(scene:self, hero:hero)
+        LaserRight.moveLaser(scene:self, hero:hero)
         removeExessProjectiles()
         Laser.removeExessLasers(scene: self)
         LaserRight.removeExessLasers(scene: self)
@@ -115,11 +114,24 @@ extension GameScene{
             let location = touch.location(in: self)
             
             
-            let smallBall = hero.createProjectile()
+            let projectile = hero.createProjectile()
             
-            self.addChild(smallBall)
+            self.addChild(projectile)
             
-            hero.launchTowards(location: location, spriteNode:smallBall)
+            hero.launchTowards(location: location, spriteNode:projectile)
+        }
+        
+        heroFireProjectile()
+    }
+    
+    func heroFireProjectile(){
+        let fire = SKEmitterNode(fileNamed: "HeroShootingFire")
+        fire?.zPosition = 5
+        fire?.position = hero.position
+        self.addChild(fire!)
+        
+        self.run(SKAction.wait(forDuration: 0.35)){
+            fire?.removeFromParent()
         }
     }
 }
@@ -143,7 +155,7 @@ extension GameScene{
             body2 = contact.bodyA
         }
         
-        if body1.categoryBitMask == CategoryEnum.laserHubCategory.rawValue && body2.categoryBitMask == CategoryEnum.smallBallCategory.rawValue {
+        if body1.categoryBitMask == CategoryEnum.laserHubCategory.rawValue && body2.categoryBitMask == CategoryEnum.projectileCategory.rawValue {
             
             if let laserLeftHubNode = contact.bodyA.node as? LaserHub{
                 
@@ -166,8 +178,13 @@ extension GameScene{
         }
         
 
-        if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.smallBallCategory.rawValue{
+        if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.projectileCategory.rawValue{
+            
+            guard let node = body2.node as? SKSpriteNode else { return }
+            
+            projectileExplosion(projectileNode: node)
             body2.node?.removeFromParent()
+            
         }
 
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.heroCategory.rawValue {
@@ -181,6 +198,21 @@ extension GameScene{
         
 
     }
+    
+    func projectileExplosion(projectileNode:SKSpriteNode){
+        
+        let explosion = SKEmitterNode(fileNamed: "ProjectileSpark")
+        explosion?.zPosition = 3
+        explosion?.position = projectileNode.position
+        self.addChild(explosion!)
+        
+        self.run(SKAction.wait(forDuration: 2)){
+            explosion?.removeFromParent()
+        }
+        
+    }
+    
+    
 }
 
 
@@ -198,7 +230,7 @@ extension GameScene {
     func removeExessProjectiles() {
         
         for temp in self.children {
-            if temp.name == "SmallBall" && temp.position.y < -600 {
+            if temp.name == "projectile" && temp.position.y < -600 {
                 temp.removeFromParent()
                 print(temp.position.y)
             }

@@ -29,13 +29,13 @@ class Background: SKSpriteNode {
         }
     }
     
-    func moveBackgrounds(scene:SKScene) {
+    func moveBackgrounds(scene:SKScene, hero:Hero) {
         
         scene.enumerateChildNodes(withName:"Background")
         {
             (node, error) in
             
-            node.position.y -= 6
+            node.position.y -= 8
             
             if node.position.y < -((scene.scene?.size.height)!)
             {
