@@ -24,7 +24,8 @@ class LaserBeam: SKSpriteNode {
         sparks.zPosition = 3
         sparks.isHidden = false
         self.addChild(sparks)
-            
+        }
+        
             if let laser = SKEmitterNode(fileNamed: "LaserBeamFX") {
                 laser.particleSize = CGSize(width: 0, height: 0)
                 laser.position = CGPoint(x: 0, y: 0)
@@ -40,9 +41,9 @@ class LaserBeam: SKSpriteNode {
                 smoke.isHidden = false
                 self.addChild(smoke)
             }
-            
         
-        }
+        
+        
         
         
         zPosition = 2

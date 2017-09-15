@@ -27,6 +27,7 @@
 		4DDF1EEB1F6B555300B84C62 /* HeroFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EEA1F6B555300B84C62 /* HeroFire.sks */; };
 		4DDF1EEF1F6B58A600B84C62 /* LaserBeamFX.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EEE1F6B58A600B84C62 /* LaserBeamFX.sks */; };
 		4DDF1EF11F6B645500B84C62 /* LaserBeamSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EF01F6B645500B84C62 /* LaserBeamSmoke.sks */; };
+		4DDF1EF51F6C4FD500B84C62 /* HeroShootingFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EF41F6C4FD500B84C62 /* HeroShootingFire.sks */; };
 		68775FC81F6A150A00102197 /* LeftLaserSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 68775FC71F6A150A00102197 /* LeftLaserSpark.sks */; };
 		68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 68775FC91F6A19C100102197 /* RightLaserSpark.sks */; };
 		688566C71F67493E009FB097 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688566C61F67493E009FB097 /* Background.swift */; };
@@ -61,6 +62,7 @@
 		4DDF1EEA1F6B555300B84C62 /* HeroFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeroFire.sks; sourceTree = "<group>"; };
 		4DDF1EEE1F6B58A600B84C62 /* LaserBeamFX.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LaserBeamFX.sks; sourceTree = "<group>"; };
 		4DDF1EF01F6B645500B84C62 /* LaserBeamSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LaserBeamSmoke.sks; sourceTree = "<group>"; };
+		4DDF1EF41F6C4FD500B84C62 /* HeroShootingFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeroShootingFire.sks; sourceTree = "<group>"; };
 		68775FC71F6A150A00102197 /* LeftLaserSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LeftLaserSpark.sks; sourceTree = "<group>"; };
 		68775FC91F6A19C100102197 /* RightLaserSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RightLaserSpark.sks; sourceTree = "<group>"; };
 		688566C61F67493E009FB097 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				68775FC71F6A150A00102197 /* LeftLaserSpark.sks */,
+				4DDF1EF41F6C4FD500B84C62 /* HeroShootingFire.sks */,
 				68775FC91F6A19C100102197 /* RightLaserSpark.sks */,
 				4DDF1EE41F6B31BE00B84C62 /* ProjectileSpark.sks */,
 				4DDF1EEA1F6B555300B84C62 /* HeroFire.sks */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DDF1EE61F6B31BE00B84C62 /* ProjectileSpark.sks in Resources */,
+				4DDF1EF51F6C4FD500B84C62 /* HeroShootingFire.sks in Resources */,
 				4DDF1EEB1F6B555300B84C62 /* HeroFire.sks in Resources */,
 				4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */,
 				68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */,

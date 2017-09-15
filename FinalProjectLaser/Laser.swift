@@ -14,14 +14,15 @@ import GameplayKit
 class Laser: SKSpriteNode {
     
     var laserHub:SKSpriteNode = LaserHub()
+    static var gameSpeed:CGFloat = 6
 
-    static func moveLaser(scene:SKScene) {
+    static func moveLaser(scene:SKScene, hero:Hero) {
             
         scene.enumerateChildNodes(withName:"laser")
         {
-            (node, error) in
             
-            node.position.y -= 6
+            (node, error) in
+            node.position.y -= 8
             
         }
     }
@@ -35,4 +36,5 @@ class Laser: SKSpriteNode {
             }
         }
     }
+    
 }

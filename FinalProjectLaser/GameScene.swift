@@ -28,7 +28,7 @@ extension GameScene{
         
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
-        view.showsPhysics = false
+        view.showsPhysics = true
 
         
 
@@ -61,7 +61,9 @@ extension GameScene{
         }
 
 
-        let waitAction = SKAction.wait(forDuration: 1.5, withRange: 2.0)
+        let waitAction = SKAction.wait(forDuration: 0.8, withRange: 0.9)
+//        let time:TimeInterval = 0.4
+//        let waitAction = SKAction.wait(forDuration: time)
         let spawnLaserAction = SKAction.run(randomLaserSelection)
         let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction]))
         run(spawnEntireAction)
@@ -98,9 +100,9 @@ extension GameScene{
     
     override func update(_ currentTime: TimeInterval) {
         
-        background.moveBackgrounds(scene:self)
-        Laser.moveLaser(scene:self)
-        LaserRight.moveLaser(scene:self)
+        background.moveBackgrounds(scene:self, hero:hero)
+        Laser.moveLaser(scene:self, hero:hero)
+        LaserRight.moveLaser(scene:self, hero:hero)
         removeExessProjectiles()
         Laser.removeExessLasers(scene: self)
         LaserRight.removeExessLasers(scene: self)
@@ -117,6 +119,19 @@ extension GameScene{
             self.addChild(projectile)
             
             hero.launchTowards(location: location, spriteNode:projectile)
+        }
+        
+        heroFireProjectile()
+    }
+    
+    func heroFireProjectile(){
+        let fire = SKEmitterNode(fileNamed: "HeroShootingFire")
+        fire?.zPosition = 5
+        fire?.position = hero.position
+        self.addChild(fire!)
+        
+        self.run(SKAction.wait(forDuration: 0.35)){
+            fire?.removeFromParent()
         }
     }
 }
@@ -196,6 +211,8 @@ extension GameScene{
         }
         
     }
+    
+    
 }
 
 
