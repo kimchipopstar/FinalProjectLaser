@@ -24,12 +24,11 @@ extension GameScene{
     
     override func didMove(to view: SKView) {
         
-//                Background Music
+        //Background Music
 //                setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
         
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
-
         view.showsPhysics = false
 
         
@@ -177,7 +176,7 @@ extension GameScene{
             if hero.lives > 0{
                 loseLives()
             } else {
-//                self.isPaused = true
+                self.isPaused = true
             }
         }
         
