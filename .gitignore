@@ -6,3 +6,4 @@ Source/Application.h
 *.xcodeproj/project.xcworkspace/xcuserdata/tyeblackie.xcuserdatad/UserInterfaceState.xcuserstate
 
 .DS_Store
+*.xcuserstate
