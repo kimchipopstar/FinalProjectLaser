@@ -16,8 +16,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let hero:Hero = Hero()
     let livesLabel:LivesLabel = LivesLabel()
     let scoreLabel:ScoreLabel = ScoreLabel()
-    
-    //let laser:Laser = Laser()
+
 }
 
 extension GameScene{
@@ -40,6 +39,8 @@ extension GameScene{
         {
             let laser = Laser()
             self.addChild(laser.laserHub)
+            
+            
         }
         
         func spawnRightLasers()
