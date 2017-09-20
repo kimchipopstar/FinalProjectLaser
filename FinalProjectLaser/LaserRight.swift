@@ -13,7 +13,13 @@ import GameplayKit
 
 class LaserRight: SKSpriteNode {
     
+    static var rightLaserMovementSpeed: CGFloat = 4.0
+    
     var laserHubRight:SKSpriteNode = LaserHubRight()
+    
+    static func rightLaserSpeedIncrease() {
+        self.rightLaserMovementSpeed = self.rightLaserMovementSpeed * 1.2
+    }
     
     static func moveLaser(scene:SKScene, hero:Hero) {
         
@@ -21,7 +27,7 @@ class LaserRight: SKSpriteNode {
         {
             (node, error) in
             
-            node.position.y -= 8
+            node.position.y -= self.rightLaserMovementSpeed
             
         }
     }

@@ -14,8 +14,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MAKR: - node Properties
     var background:Background = Background()
     let hero:Hero = Hero()
-    let livesLabel:LivesLabel = LivesLabel()
-    let scoreLabel:ScoreLabel = ScoreLabel()
+    
+    var spawnInterval:Double = 3
+    let livesLabel:SKLabelNode = SKLabelNode(fontNamed: "The Bold Font")
+    let scoreLabel:SKLabelNode = SKLabelNode(fontNamed: "The Bold Font")
+
+    
 
 }
 
@@ -23,17 +27,49 @@ extension GameScene{
     
     override func didMove(to view: SKView) {
         
+        livesLabel.text = "Lives: 3"
+        livesLabel.fontSize = 70
+        livesLabel.fontColor = SKColor.white
+        livesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        livesLabel.position = CGPoint(x: -350, y: -600)
+        livesLabel.zPosition = 100
+
+        scoreLabel.text = "0"
+        scoreLabel.fontSize = 70
+        scoreLabel.fontColor = SKColor.white
+        scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
+        scoreLabel.position = CGPoint(x: 350, y: 600)
+        scoreLabel.zPosition = 100
+        
+        
+        view.showsNodeCount = false
+        view.showsFPS = false
         //Background Music
-//                setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
+        setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
         
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
-        view.showsPhysics = true
-
+        view.showsPhysics = false
         
+
+        func decreaseLaserSpawnTime () {
+            removeAction(forKey: "spawnLoop")
+            self.spawnInterval = self.spawnInterval * 0.8
+            let waitAction = SKAction.wait(forDuration: (self.spawnInterval), withRange: (self.spawnInterval) * 1.5)
+            let spawnLaserAction = SKAction.run(randomLaserSelection)
+            let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([ waitAction, spawnLaserAction]))
+            run(spawnEntireAction, withKey: "spawnLoop")
+        }
 
         // MARK: - HELLO
         
+        let wait = SKAction.wait(forDuration:20.0)
+        let decreaseTimeInterval = SKAction.run(decreaseLaserSpawnTime)
+        let speedUpBackgroundAction = SKAction.run(background.backgroundSpeedIncrease)
+        let speedUpLeftLaserAction = SKAction.run(Laser.leftLaserSpeedIncrease)
+        let speedUpRightLaserAction = SKAction.run(LaserRight.rightLaserSpeedIncrease)
+        let increaseBackgroundSpeedAction = SKAction.repeatForever(SKAction.sequence([wait, speedUpBackgroundAction, speedUpLeftLaserAction, speedUpRightLaserAction, decreaseTimeInterval]))
+        run(increaseBackgroundSpeedAction)
         
         func spawnLeftLasers()
         {
@@ -61,15 +97,19 @@ extension GameScene{
                 spawnRightLasers()
             }
         }
+
+
+        removeAction(forKey: "spawnLoop")
+        self.spawnInterval = self.spawnInterval * 0.95
         
-        
-        
-        let waitAction = SKAction.wait(forDuration: 0.8, withRange: 0.9)
-//        let time:TimeInterval = 0.4
-//        let waitAction = SKAction.wait(forDuration: time)
+        let waitAction = SKAction.wait(forDuration: (self.spawnInterval), withRange: (self.spawnInterval) * 1.2)
         let spawnLaserAction = SKAction.run(randomLaserSelection)
-        let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([spawnLaserAction, waitAction]))
-        run(spawnEntireAction)
+        let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([ waitAction, spawnLaserAction]))
+        run(spawnEntireAction, withKey: "spawnLoop")
+        
+        
+        
+//        hero.setUpHero()
         
         self.addChild(hero)
         
@@ -92,6 +132,28 @@ extension GameScene{
         
         hero.lives -= 1
         livesLabel.text = "Lives: \(hero.lives)"
+        
+        if hero.lives == 2 {
+            hero.texture = SKTexture(imageNamed: "Laser1")
+        }else if hero.lives == 1{
+            hero.texture = SKTexture(imageNamed: "Laser2")
+            if let heroDamageSmoke = SKEmitterNode(fileNamed: "HeroSmoke") {
+                heroDamageSmoke.particleSize = CGSize(width: 0, height: 0)
+                heroDamageSmoke.position = CGPoint(x: 0, y: 80)
+                heroDamageSmoke.zPosition = 1
+                heroDamageSmoke.isHidden = false
+                hero.addChild(heroDamageSmoke)
+            }
+        }else{
+            hero.texture = SKTexture(imageNamed: "Laser3")
+            if let heroDamageFire = SKEmitterNode(fileNamed: "HeroFire") {
+                heroDamageFire.particleSize = CGSize(width: 0, height: 0)
+                heroDamageFire.position = CGPoint(x: 0, y: 80)
+                heroDamageFire.zPosition = 2
+                heroDamageFire.isHidden = false
+                hero.addChild(heroDamageFire)
+            }
+        }
     }
     
     func addScore(){
@@ -121,20 +183,11 @@ extension GameScene{
             self.addChild(projectile)
             
             hero.launchTowards(location: location, spriteNode:projectile)
+//            let projectileLaunchSound = SKAction.playSoundFileNamed(<#T##soundFile: String##String#>, waitForCompletion: false)
+//            run(projectileLaunchSound)
         }
         
-        heroFireProjectile()
-    }
-    
-    func heroFireProjectile(){
-        let fire = SKEmitterNode(fileNamed: "HeroShootingFire")
-        fire?.zPosition = 5
-        fire?.position = hero.position
-        self.addChild(fire!)
-        
-        self.run(SKAction.wait(forDuration: 0.35)){
-            fire?.removeFromParent()
-        }
+
     }
 }
 
@@ -166,6 +219,10 @@ extension GameScene{
                     addScore()
                     laserLeftHubNode.texture = SKTexture(imageNamed: "LaserHubLeftRed")
                     laserLeftHubNode.isOn = false
+                    let buttonSound = SKAction.playSoundFileNamed("ButtonPress", waitForCompletion: false)
+                    let laserPowerDownSound = SKAction.playSoundFileNamed("laserPowerDown", waitForCompletion: false)
+                    run(buttonSound)
+                    run(laserPowerDownSound)
                 }
 
             } else if let laserRightHubNode = contact.bodyA.node as? LaserHubRight{
@@ -175,12 +232,19 @@ extension GameScene{
                     addScore()
                     laserRightHubNode.texture = SKTexture(imageNamed: "LaserHubRightRed")
                     laserRightHubNode.isOn = false
+                    let buttonSound = SKAction.playSoundFileNamed("ButtonPress", waitForCompletion: false)
+                    let laserPowerDownSound = SKAction.playSoundFileNamed("laserPowerDown", waitForCompletion: false)
+                    run(buttonSound)
+                    run(laserPowerDownSound)
                 }
             }
         }
         
 
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.projectileCategory.rawValue{
+            
+//            let projectileDestructSound = SKAction.playSoundFileNamed(<#T##soundFile: String##String#>, waitForCompletion: false)
+//            run(projectileDestructSound)
             
             guard let node = body2.node as? SKSpriteNode else { return }
             
@@ -190,6 +254,9 @@ extension GameScene{
         }
 
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.heroCategory.rawValue {
+            
+//            let heroDamageSound = SKAction.playSoundFileNamed(<#T##soundFile: String##String#>, waitForCompletion: false)
+//            run(heroDamageSound)
             
             if hero.lives > 0{
                 loseLives()

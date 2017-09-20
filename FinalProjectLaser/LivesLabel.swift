@@ -12,7 +12,8 @@ import GameplayKit
 class LivesLabel: SKLabelNode {
     
     
-    override init() {
+    override init(){
+
         super.init()
         text = "Lives: 3"
         fontSize = 70

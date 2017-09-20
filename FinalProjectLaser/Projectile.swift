@@ -24,8 +24,8 @@ class Projectile: SKSpriteNode {
         physicsBody?.collisionBitMask  = CategoryEnum.projectileCategory.rawValue
         physicsBody?.contactTestBitMask = CategoryEnum.laserBeamCategory.rawValue | CategoryEnum.laserHubCategory.rawValue
         name = "projectile"
-        
-        if let projectileParticle = SKEmitterNode(fileNamed: "HeroFire") {
+      
+        if let projectileParticle = SKEmitterNode(fileNamed: "ProjectileFire") {
             projectileParticle.particleSize = CGSize(width: 0, height: 0)
             projectileParticle.position = CGPoint(x: 0, y: 0)
             projectileParticle.zPosition = 3
