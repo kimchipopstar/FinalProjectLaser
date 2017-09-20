@@ -10,8 +10,8 @@ import SpriteKit
 import GameplayKit
 
 class Background: SKSpriteNode {
-//    
-//    var background:SKSpriteNode = SKSpriteNode()
+    
+    var backgroundSpeed: CGFloat = 4.0
     
     func createBackgrounds(scene:SKScene) {
         
@@ -28,6 +28,12 @@ class Background: SKSpriteNode {
             scene.addChild(background)
         }
     }
+
+    func backgroundSpeedIncrease() {
+            self.backgroundSpeed = self.backgroundSpeed * 1.2
+    }
+    
+    
     
     func moveBackgrounds(scene:SKScene, hero:Hero) {
         
@@ -35,11 +41,11 @@ class Background: SKSpriteNode {
         {
             (node, error) in
             
-            node.position.y -= 8
-            
+            node.position.y -= self.backgroundSpeed
+
             if node.position.y < -((scene.scene?.size.height)!)
             {
-                node.position.y += (scene.scene?.size.height)! * 3
+                node.position.y += ((scene.scene?.size.height)! - 5) * 3
             }
         }
     }

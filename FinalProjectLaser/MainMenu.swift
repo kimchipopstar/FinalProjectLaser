@@ -6,8 +6,13 @@
 //  Copyright © 2017 Jaewon Kim. All rights reserved.
 //
 
-import UIKit
+import SpriteKit
 
-class MainMenue: SKScene {
+class MainMenu: SKScene {
 
+//    override func didMove(to view: SKView) {
+//        <#code#>
+//    }
+//    
+//}
 }

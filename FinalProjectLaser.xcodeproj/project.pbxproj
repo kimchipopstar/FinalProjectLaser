@@ -13,8 +13,6 @@
 		4D0C7EFE1F688D7E003C861C /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EFD1F688D7E003C861C /* Projectile.swift */; };
 		4D0C7F031F69E2A5003C861C /* SocreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7F021F69E2A5003C861C /* SocreLabel.swift */; };
 		4D0C7F051F69E2C2003C861C /* LivesLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7F041F69E2C2003C861C /* LivesLabel.swift */; };
-		4D791CE61F5F9DC000656D7B /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4D791CE51F5F9DC000656D7B /* MainMenu.sks */; };
-		4D791CE81F5F9FCA00656D7B /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D791CE71F5F9FCA00656D7B /* MainMenu.swift */; };
 		4D791CEA1F61505F00656D7B /* Elektronomia - Sky High.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */; };
 		4DBDB5CE1F5F676E007014D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBDB5CD1F5F676E007014D8 /* AppDelegate.swift */; };
 		4DBDB5D01F5F676E007014D8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5CF1F5F676E007014D8 /* GameScene.sks */; };
@@ -24,12 +22,19 @@
 		4DBDB5DB1F5F676E007014D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */; };
 		4DBDB5DE1F5F676E007014D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5DC1F5F676E007014D8 /* LaunchScreen.storyboard */; };
 		4DDF1EE61F6B31BE00B84C62 /* ProjectileSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EE41F6B31BE00B84C62 /* ProjectileSpark.sks */; };
-		4DDF1EEB1F6B555300B84C62 /* HeroFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EEA1F6B555300B84C62 /* HeroFire.sks */; };
+		4DDF1EEB1F6B555300B84C62 /* ProjectileFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EEA1F6B555300B84C62 /* ProjectileFire.sks */; };
 		4DDF1EEF1F6B58A600B84C62 /* LaserBeamFX.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EEE1F6B58A600B84C62 /* LaserBeamFX.sks */; };
 		4DDF1EF11F6B645500B84C62 /* LaserBeamSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EF01F6B645500B84C62 /* LaserBeamSmoke.sks */; };
 		4DDF1EF51F6C4FD500B84C62 /* HeroShootingFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EF41F6C4FD500B84C62 /* HeroShootingFire.sks */; };
+		684C910D1F71C03B00F3A111 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 684C910C1F71C03B00F3A111 /* MainMenu.sks */; };
+		684C91111F71C12600F3A111 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C91101F71C12600F3A111 /* MainMenu.swift */; };
+		684C91141F71E72200F3A111 /* HeroSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 684C91131F71E72200F3A111 /* HeroSmoke.sks */; };
+		684C91161F71E9DA00F3A111 /* HeroFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 684C91151F71E9DA00F3A111 /* HeroFire.sks */; };
 		68775FC81F6A150A00102197 /* LeftLaserSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 68775FC71F6A150A00102197 /* LeftLaserSpark.sks */; };
 		68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 68775FC91F6A19C100102197 /* RightLaserSpark.sks */; };
+		68775FD21F6CA03000102197 /* 37155__volivieri__soccer-ball-hit-ground-02.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68775FD11F6CA03000102197 /* 37155__volivieri__soccer-ball-hit-ground-02.wav */; };
+		68775FD41F6CA11A00102197 /* ButtonPress.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68775FD31F6CA11A00102197 /* ButtonPress.mp3 */; };
+		68775FD71F6CAA7500102197 /* laserPowerDown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68775FD61F6CAA7500102197 /* laserPowerDown.wav */; };
 		688566C71F67493E009FB097 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688566C61F67493E009FB097 /* Background.swift */; };
 		688566C91F677405009FB097 /* LaserHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688566C81F677405009FB097 /* LaserHub.swift */; };
 		688566CB1F677415009FB097 /* LaserBeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688566CA1F677415009FB097 /* LaserBeam.swift */; };
@@ -45,8 +50,6 @@
 		4D0C7EFD1F688D7E003C861C /* Projectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
 		4D0C7F021F69E2A5003C861C /* SocreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocreLabel.swift; sourceTree = "<group>"; };
 		4D0C7F041F69E2C2003C861C /* LivesLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesLabel.swift; sourceTree = "<group>"; };
-		4D791CE51F5F9DC000656D7B /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
-		4D791CE71F5F9FCA00656D7B /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Elektronomia - Sky High.mp3"; sourceTree = "<group>"; };
 		4DBDB5CA1F5F676E007014D8 /* FinalProjectLaser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProjectLaser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBDB5CD1F5F676E007014D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,12 +62,19 @@
 		4DBDB5DD1F5F676E007014D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBDB5DF1F5F676E007014D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DDF1EE41F6B31BE00B84C62 /* ProjectileSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = ProjectileSpark.sks; path = ../ProjectileSpark.sks; sourceTree = "<group>"; };
-		4DDF1EEA1F6B555300B84C62 /* HeroFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeroFire.sks; sourceTree = "<group>"; };
+		4DDF1EEA1F6B555300B84C62 /* ProjectileFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ProjectileFire.sks; sourceTree = "<group>"; };
 		4DDF1EEE1F6B58A600B84C62 /* LaserBeamFX.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LaserBeamFX.sks; sourceTree = "<group>"; };
 		4DDF1EF01F6B645500B84C62 /* LaserBeamSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LaserBeamSmoke.sks; sourceTree = "<group>"; };
 		4DDF1EF41F6C4FD500B84C62 /* HeroShootingFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeroShootingFire.sks; sourceTree = "<group>"; };
+		684C910C1F71C03B00F3A111 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
+		684C91101F71C12600F3A111 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		684C91131F71E72200F3A111 /* HeroSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeroSmoke.sks; sourceTree = "<group>"; };
+		684C91151F71E9DA00F3A111 /* HeroFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeroFire.sks; sourceTree = "<group>"; };
 		68775FC71F6A150A00102197 /* LeftLaserSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LeftLaserSpark.sks; sourceTree = "<group>"; };
 		68775FC91F6A19C100102197 /* RightLaserSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RightLaserSpark.sks; sourceTree = "<group>"; };
+		68775FD11F6CA03000102197 /* 37155__volivieri__soccer-ball-hit-ground-02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "37155__volivieri__soccer-ball-hit-ground-02.wav"; sourceTree = "<group>"; };
+		68775FD31F6CA11A00102197 /* ButtonPress.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ButtonPress.mp3; sourceTree = "<group>"; };
+		68775FD61F6CAA7500102197 /* laserPowerDown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laserPowerDown.wav; sourceTree = "<group>"; };
 		688566C61F67493E009FB097 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		688566C81F677405009FB097 /* LaserHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserHub.swift; sourceTree = "<group>"; };
 		688566CA1F677415009FB097 /* LaserBeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserBeam.swift; sourceTree = "<group>"; };
@@ -98,6 +108,9 @@
 			children = (
 				4DBDB5CC1F5F676E007014D8 /* FinalProjectLaser */,
 				4DBDB5CB1F5F676E007014D8 /* Products */,
+				68775FD11F6CA03000102197 /* 37155__volivieri__soccer-ball-hit-ground-02.wav */,
+				68775FD31F6CA11A00102197 /* ButtonPress.mp3 */,
+				68775FD61F6CAA7500102197 /* laserPowerDown.wav */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,16 +125,13 @@
 		4DBDB5CC1F5F676E007014D8 /* FinalProjectLaser */ = {
 			isa = PBXGroup;
 			children = (
-				4DBDB5CF1F5F676E007014D8 /* GameScene.sks */,
-				4DBDB5D31F5F676E007014D8 /* GameScene.swift */,
+				684C91121F71C13600F3A111 /* Scenes */,
 				688566D71F689AC6009FB097 /* Collision Category Enum */,
 				688566D21F689A02009FB097 /* Lasers */,
 				688566D51F689A83009FB097 /* Hero */,
 				688566D61F689A93009FB097 /* Background */,
 				4D0C7F011F69E252003C861C /* Score and Lives */,
 				68775FC41F6A096D00102197 /* Particles */,
-				4D791CE51F5F9DC000656D7B /* MainMenu.sks */,
-				4D791CE71F5F9FCA00656D7B /* MainMenu.swift */,
 				4DBDB5D51F5F676E007014D8 /* GameViewController.swift */,
 				4DBDB5D11F5F676E007014D8 /* Actions.sks */,
 				4DBDB5D71F5F676E007014D8 /* Main.storyboard */,
@@ -134,6 +144,17 @@
 			path = FinalProjectLaser;
 			sourceTree = "<group>";
 		};
+		684C91121F71C13600F3A111 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4DBDB5CF1F5F676E007014D8 /* GameScene.sks */,
+				4DBDB5D31F5F676E007014D8 /* GameScene.swift */,
+				684C910C1F71C03B00F3A111 /* MainMenu.sks */,
+				684C91101F71C12600F3A111 /* MainMenu.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		68775FC41F6A096D00102197 /* Particles */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +162,9 @@
 				4DDF1EF41F6C4FD500B84C62 /* HeroShootingFire.sks */,
 				68775FC91F6A19C100102197 /* RightLaserSpark.sks */,
 				4DDF1EE41F6B31BE00B84C62 /* ProjectileSpark.sks */,
-				4DDF1EEA1F6B555300B84C62 /* HeroFire.sks */,
+				4DDF1EEA1F6B555300B84C62 /* ProjectileFire.sks */,
+				684C91151F71E9DA00F3A111 /* HeroFire.sks */,
+				684C91131F71E72200F3A111 /* HeroSmoke.sks */,
 				4DDF1EF01F6B645500B84C62 /* LaserBeamSmoke.sks */,
 				4DDF1EEE1F6B58A600B84C62 /* LaserBeamFX.sks */,
 			);
@@ -262,16 +285,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68775FD41F6CA11A00102197 /* ButtonPress.mp3 in Resources */,
 				4DDF1EE61F6B31BE00B84C62 /* ProjectileSpark.sks in Resources */,
+				68775FD21F6CA03000102197 /* 37155__volivieri__soccer-ball-hit-ground-02.wav in Resources */,
+				684C91161F71E9DA00F3A111 /* HeroFire.sks in Resources */,
 				4DDF1EF51F6C4FD500B84C62 /* HeroShootingFire.sks in Resources */,
-				4DDF1EEB1F6B555300B84C62 /* HeroFire.sks in Resources */,
+				4DDF1EEB1F6B555300B84C62 /* ProjectileFire.sks in Resources */,
 				4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */,
 				68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */,
-				4D791CE61F5F9DC000656D7B /* MainMenu.sks in Resources */,
+				68775FD71F6CAA7500102197 /* laserPowerDown.wav in Resources */,
 				4DBDB5D01F5F676E007014D8 /* GameScene.sks in Resources */,
 				4DBDB5DB1F5F676E007014D8 /* Assets.xcassets in Resources */,
+				684C91141F71E72200F3A111 /* HeroSmoke.sks in Resources */,
 				4D791CEA1F61505F00656D7B /* Elektronomia - Sky High.mp3 in Resources */,
 				4DDF1EF11F6B645500B84C62 /* LaserBeamSmoke.sks in Resources */,
+				684C910D1F71C03B00F3A111 /* MainMenu.sks in Resources */,
 				4DDF1EEF1F6B58A600B84C62 /* LaserBeamFX.sks in Resources */,
 				68775FC81F6A150A00102197 /* LeftLaserSpark.sks in Resources */,
 				4DBDB5DE1F5F676E007014D8 /* LaunchScreen.storyboard in Resources */,
@@ -294,10 +322,10 @@
 				688566CD1F688AF0009FB097 /* LaserHubRight.swift in Sources */,
 				688566D11F688D6C009FB097 /* LaserRight.swift in Sources */,
 				688566C71F67493E009FB097 /* Background.swift in Sources */,
+				684C91111F71C12600F3A111 /* MainMenu.swift in Sources */,
 				688566CB1F677415009FB097 /* LaserBeam.swift in Sources */,
 				4D0C7EF41F6724E6003C861C /* Laser.swift in Sources */,
 				4D0C7EFA1F672C8E003C861C /* Hero.swift in Sources */,
-				4D791CE81F5F9FCA00656D7B /* MainMenu.swift in Sources */,
 				4D0C7EF81F672AE4003C861C /* CategoryEnum.swift in Sources */,
 				4D0C7F051F69E2C2003C861C /* LivesLabel.swift in Sources */,
 				688566C91F677405009FB097 /* LaserHub.swift in Sources */,
