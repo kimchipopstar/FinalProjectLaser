@@ -17,12 +17,12 @@ class Background: SKSpriteNode {
         
         for i in 0...3 {
             
-            
+        
             let background = SKSpriteNode(imageNamed: "LaserTunnel")
             background.name = "Background"
             background.size = CGSize(width: (scene.scene?.size.width)!, height: 1000)
             background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-            background.position = CGPoint(x: 0, y: CGFloat(i) * background.size.height)
+            background.position = CGPoint(x: 0, y: (CGFloat(i) * background.size.height - 200))
             background.zPosition = 0
             
             scene.addChild(background)
