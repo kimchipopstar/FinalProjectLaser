@@ -27,19 +27,6 @@ extension GameScene{
     
     override func didMove(to view: SKView) {
         
-        livesLabel.text = "Lives: 3"
-        livesLabel.fontSize = 70
-        livesLabel.fontColor = SKColor.white
-        livesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        livesLabel.position = CGPoint(x: -350, y: -600)
-        livesLabel.zPosition = 100
-
-        scoreLabel.text = "0"
-        scoreLabel.fontSize = 70
-        scoreLabel.fontColor = SKColor.white
-        scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
-        scoreLabel.position = CGPoint(x: 350, y: 600)
-        scoreLabel.zPosition = 100
         
         
         view.showsNodeCount = false
@@ -122,8 +109,8 @@ extension GameScene{
         borderFrame.restitution = 1
         self.physicsBody = borderFrame
         
+        setUpLabels()
         self.addChild(livesLabel)
-
         self.addChild(scoreLabel)
         
     }
@@ -304,6 +291,24 @@ extension GameScene {
                 print(temp.position.y)
             }
         }
+    }
+    
+    func setUpLabels(){
+        
+        livesLabel.text = "Lives: 3"
+        livesLabel.fontSize = 70
+        livesLabel.fontColor = SKColor.white
+        livesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        livesLabel.position = CGPoint(x: -350, y: -600)
+        livesLabel.zPosition = 100
+        
+        scoreLabel.text = "0"
+        scoreLabel.fontSize = 70
+        scoreLabel.fontColor = SKColor.white
+        scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
+        scoreLabel.position = CGPoint(x: 350, y: 600)
+        scoreLabel.zPosition = 100
+        
     }
 }
 
