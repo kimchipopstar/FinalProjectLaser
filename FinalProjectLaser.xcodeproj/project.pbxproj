@@ -13,8 +13,6 @@
 		4D0C7EFE1F688D7E003C861C /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EFD1F688D7E003C861C /* Projectile.swift */; };
 		4D0C7F031F69E2A5003C861C /* SocreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7F021F69E2A5003C861C /* SocreLabel.swift */; };
 		4D0C7F051F69E2C2003C861C /* LivesLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7F041F69E2C2003C861C /* LivesLabel.swift */; };
-		4D791CE61F5F9DC000656D7B /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4D791CE51F5F9DC000656D7B /* MainMenu.sks */; };
-		4D791CE81F5F9FCA00656D7B /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D791CE71F5F9FCA00656D7B /* MainMenu.swift */; };
 		4D791CEA1F61505F00656D7B /* Elektronomia - Sky High.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */; };
 		4DBDB5CE1F5F676E007014D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBDB5CD1F5F676E007014D8 /* AppDelegate.swift */; };
 		4DBDB5D01F5F676E007014D8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5CF1F5F676E007014D8 /* GameScene.sks */; };
@@ -45,8 +43,6 @@
 		4D0C7EFD1F688D7E003C861C /* Projectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
 		4D0C7F021F69E2A5003C861C /* SocreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocreLabel.swift; sourceTree = "<group>"; };
 		4D0C7F041F69E2C2003C861C /* LivesLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesLabel.swift; sourceTree = "<group>"; };
-		4D791CE51F5F9DC000656D7B /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
-		4D791CE71F5F9FCA00656D7B /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Elektronomia - Sky High.mp3"; sourceTree = "<group>"; };
 		4DBDB5CA1F5F676E007014D8 /* FinalProjectLaser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProjectLaser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBDB5CD1F5F676E007014D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,8 +116,6 @@
 				688566D61F689A93009FB097 /* Background */,
 				4D0C7F011F69E252003C861C /* Score and Lives */,
 				68775FC41F6A096D00102197 /* Particles */,
-				4D791CE51F5F9DC000656D7B /* MainMenu.sks */,
-				4D791CE71F5F9FCA00656D7B /* MainMenu.swift */,
 				4DBDB5D51F5F676E007014D8 /* GameViewController.swift */,
 				4DBDB5D11F5F676E007014D8 /* Actions.sks */,
 				4DBDB5D71F5F676E007014D8 /* Main.storyboard */,
@@ -267,7 +261,6 @@
 				4DDF1EEB1F6B555300B84C62 /* HeroFire.sks in Resources */,
 				4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */,
 				68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */,
-				4D791CE61F5F9DC000656D7B /* MainMenu.sks in Resources */,
 				4DBDB5D01F5F676E007014D8 /* GameScene.sks in Resources */,
 				4DBDB5DB1F5F676E007014D8 /* Assets.xcassets in Resources */,
 				4D791CEA1F61505F00656D7B /* Elektronomia - Sky High.mp3 in Resources */,
@@ -297,7 +290,6 @@
 				688566CB1F677415009FB097 /* LaserBeam.swift in Sources */,
 				4D0C7EF41F6724E6003C861C /* Laser.swift in Sources */,
 				4D0C7EFA1F672C8E003C861C /* Hero.swift in Sources */,
-				4D791CE81F5F9FCA00656D7B /* MainMenu.swift in Sources */,
 				4D0C7EF81F672AE4003C861C /* CategoryEnum.swift in Sources */,
 				4D0C7F051F69E2C2003C861C /* LivesLabel.swift in Sources */,
 				688566C91F677405009FB097 /* LaserHub.swift in Sources */,
