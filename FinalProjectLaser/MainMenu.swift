@@ -8,12 +8,7 @@
 
 import SpriteKit
 
-<<<<<<< HEAD
-class MenuScene: SKScene {
-    
-=======
 class MainMenu: SKScene {
 
->>>>>>> master
 }
 
