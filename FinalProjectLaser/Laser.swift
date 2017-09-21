@@ -13,18 +13,27 @@ import GameplayKit
 
 class Laser: SKSpriteNode {
     
+    static var leftLaserMovementSpeed: CGFloat = 4.0
+    
     var laserHub:SKSpriteNode = LaserHub()
 
-    static func moveLaser(scene:SKScene) {
+    static func leftLaserSpeedIncrease() {
+        self.leftLaserMovementSpeed = self.leftLaserMovementSpeed * 1.2
+    }
+    
+    static func moveLaser(scene:SKScene, hero:Hero) {
             
         scene.enumerateChildNodes(withName:"laser")
         {
+            
             (node, error) in
             
-            node.position.y -= 3
+            node.position.y -= self.leftLaserMovementSpeed
             
         }
     }
+    
+     
     
     static func removeExessLasers(scene:SKScene) {
         
@@ -35,4 +44,5 @@ class Laser: SKSpriteNode {
             }
         }
     }
+    
 }
