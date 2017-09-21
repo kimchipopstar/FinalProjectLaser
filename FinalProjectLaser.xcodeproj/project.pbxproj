@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10D5B7FEBA673951AC5989E0 /* Pods_FinalProjectLaser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F6DF12EB1CBE2062943751 /* Pods_FinalProjectLaser.framework */; };
 		4D0C7EF41F6724E6003C861C /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EF31F6724E6003C861C /* Laser.swift */; };
 		4D0C7EF81F672AE4003C861C /* CategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EF71F672AE4003C861C /* CategoryEnum.swift */; };
 		4D0C7EFA1F672C8E003C861C /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EF91F672C8E003C861C /* Hero.swift */; };
@@ -22,6 +23,8 @@
 		4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5D71F5F676E007014D8 /* Main.storyboard */; };
 		4DBDB5DB1F5F676E007014D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */; };
 		4DBDB5DE1F5F676E007014D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5DC1F5F676E007014D8 /* LaunchScreen.storyboard */; };
+		59D12D981F69CCC4007B6BA5 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D12D971F69CCC4007B6BA5 /* GameOverViewController.swift */; };
+		59D12D9A1F69DCE2007B6BA5 /* LeaderBoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D12D991F69DCE2007B6BA5 /* LeaderBoardTableViewCell.swift */; };
 		688566C71F67493E009FB097 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688566C61F67493E009FB097 /* Background.swift */; };
 		688566C91F677405009FB097 /* LaserHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688566C81F677405009FB097 /* LaserHub.swift */; };
 		688566CB1F677415009FB097 /* LaserBeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688566CA1F677415009FB097 /* LaserBeam.swift */; };
@@ -31,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22F6DF12EB1CBE2062943751 /* Pods_FinalProjectLaser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProjectLaser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0C7EF31F6724E6003C861C /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
 		4D0C7EF71F672AE4003C861C /* CategoryEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEnum.swift; sourceTree = "<group>"; };
 		4D0C7EF91F672C8E003C861C /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
@@ -48,12 +52,16 @@
 		4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBDB5DD1F5F676E007014D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBDB5DF1F5F676E007014D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B535F152C257F03A977295 /* Pods-FinalProjectLaser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectLaser.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProjectLaser/Pods-FinalProjectLaser.release.xcconfig"; sourceTree = "<group>"; };
+		59D12D971F69CCC4007B6BA5 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		59D12D991F69DCE2007B6BA5 /* LeaderBoardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoardTableViewCell.swift; sourceTree = "<group>"; };
 		688566C61F67493E009FB097 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		688566C81F677405009FB097 /* LaserHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserHub.swift; sourceTree = "<group>"; };
 		688566CA1F677415009FB097 /* LaserBeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserBeam.swift; sourceTree = "<group>"; };
 		688566CC1F688AF0009FB097 /* LaserHubRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserHubRight.swift; sourceTree = "<group>"; };
 		688566CE1F688B09009FB097 /* LaserBeamRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserBeamRight.swift; sourceTree = "<group>"; };
 		688566D01F688D6C009FB097 /* LaserRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserRight.swift; sourceTree = "<group>"; };
+		C2B4A7ACD098E6417F492846 /* Pods-FinalProjectLaser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectLaser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProjectLaser/Pods-FinalProjectLaser.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10D5B7FEBA673951AC5989E0 /* Pods_FinalProjectLaser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +81,8 @@
 			children = (
 				4DBDB5CC1F5F676E007014D8 /* FinalProjectLaser */,
 				4DBDB5CB1F5F676E007014D8 /* Products */,
+				D024506ADA9097C12C3B0860 /* Pods */,
+				80CF4E02D694430337D1EAFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,17 +99,18 @@
 			children = (
 				4DBDB5CF1F5F676E007014D8 /* GameScene.sks */,
 				4DBDB5D31F5F676E007014D8 /* GameScene.swift */,
-
 				4D0C7EFD1F688D7E003C861C /* Projectile.swift */,
 				688566D71F689AC6009FB097 /* Collision Category Enum */,
 				688566D21F689A02009FB097 /* Lasers */,
 				688566D51F689A83009FB097 /* Hero */,
 				688566D61F689A93009FB097 /* Background */,
 				4D791CE51F5F9DC000656D7B /* MainMenu.sks */,
+				59D12D971F69CCC4007B6BA5 /* GameOverViewController.swift */,
 				4D791CE71F5F9FCA00656D7B /* MainMenu.swift */,
 				4DBDB5D51F5F676E007014D8 /* GameViewController.swift */,
 				4DBDB5D11F5F676E007014D8 /* Actions.sks */,
 				4DBDB5D71F5F676E007014D8 /* Main.storyboard */,
+				59D12D991F69DCE2007B6BA5 /* LeaderBoardTableViewCell.swift */,
 				4DBDB5CD1F5F676E007014D8 /* AppDelegate.swift */,
 				4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */,
 				4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */,
@@ -161,6 +173,23 @@
 			name = "Collision Category Enum";
 			sourceTree = "<group>";
 		};
+		80CF4E02D694430337D1EAFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22F6DF12EB1CBE2062943751 /* Pods_FinalProjectLaser.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D024506ADA9097C12C3B0860 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2B4A7ACD098E6417F492846 /* Pods-FinalProjectLaser.debug.xcconfig */,
+				55B535F152C257F03A977295 /* Pods-FinalProjectLaser.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,9 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DBDB5E21F5F676E007014D8 /* Build configuration list for PBXNativeTarget "FinalProjectLaser" */;
 			buildPhases = (
+				B2858B5BD5063A8F6087B9CC /* [CP] Check Pods Manifest.lock */,
 				4DBDB5C61F5F676E007014D8 /* Sources */,
 				4DBDB5C71F5F676E007014D8 /* Frameworks */,
 				4DBDB5C81F5F676E007014D8 /* Resources */,
+				5B10437BF99BEC1E6BD11370 /* [CP] Embed Pods Frameworks */,
+				9F6364B0561A9FC7778BA54D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,12 +265,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5B10437BF99BEC1E6BD11370 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FinalProjectLaser/Pods-FinalProjectLaser-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinalProjectLaser/Pods-FinalProjectLaser-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F6364B0561A9FC7778BA54D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinalProjectLaser/Pods-FinalProjectLaser-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2858B5BD5063A8F6087B9CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FinalProjectLaser-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4DBDB5C61F5F676E007014D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4DBDB5D41F5F676E007014D8 /* GameScene.swift in Sources */,
+				59D12D9A1F69DCE2007B6BA5 /* LeaderBoardTableViewCell.swift in Sources */,
 				4D0C7EFE1F688D7E003C861C /* Projectile.swift in Sources */,
 				688566CF1F688B09009FB097 /* LaserBeamRight.swift in Sources */,
 				4DBDB5D61F5F676E007014D8 /* GameViewController.swift in Sources */,
@@ -252,6 +341,7 @@
 				4D791CE81F5F9FCA00656D7B /* MainMenu.swift in Sources */,
 				4D0C7EF81F672AE4003C861C /* CategoryEnum.swift in Sources */,
 				688566C91F677405009FB097 /* LaserHub.swift in Sources */,
+				59D12D981F69CCC4007B6BA5 /* GameOverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +462,7 @@
 		};
 		4DBDB5E31F5F676E007014D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2B4A7ACD098E6417F492846 /* Pods-FinalProjectLaser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K95R2XCRT4;
@@ -386,6 +477,7 @@
 		};
 		4DBDB5E41F5F676E007014D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55B535F152C257F03A977295 /* Pods-FinalProjectLaser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K95R2XCRT4;

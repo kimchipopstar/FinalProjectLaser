@@ -9,10 +9,7 @@
 import UIKit
 import SpriteKit
 
-class MainMenu: SKScene {
+class MenuScene: SKScene {
     
-    override func didMove(to view: SKView) {
-        print("did launch")
-    }
-
 }
+

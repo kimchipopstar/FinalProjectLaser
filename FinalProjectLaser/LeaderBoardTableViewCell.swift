@@ -9,16 +9,16 @@
 import UIKit
 
 class LeaderBoardTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var nameCell: UILabel!
+    @IBOutlet weak var scoreCell: UILabel!
+    
+    var name = ""
+    var score = 0
+    
+    func setLabels() {
+        nameCell.text = name
+        scoreCell.text = String(self.score)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }
