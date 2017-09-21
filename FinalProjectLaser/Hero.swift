@@ -26,33 +26,23 @@ class Hero: SKSpriteNode {
         position = CGPoint(x: 0, y: -600)
         zPosition = 120
         texture = heroTexture
-        
-//        physicsBody = SKPhysicsBody(texture: heroTexture, size: size)
         physicsBody = SKPhysicsBody(rectangleOf: size)
         physicsBody?.categoryBitMask = CategoryEnum.heroCategory.rawValue
         physicsBody?.collisionBitMask = CategoryEnum.noCategory.rawValue
         physicsBody?.contactTestBitMask = CategoryEnum.laserBeamCategory.rawValue
         physicsBody?.affectedByGravity = false
         physicsBody?.isDynamic = true
-        
-        
     }
-    
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-
-    
-    func createProjectile() -> SKSpriteNode
-    {
+    func createProjectile() -> SKSpriteNode {
         return Projectile()
     }
     
-    func launchTowards(location:CGPoint, spriteNode:SKSpriteNode)
-    {
+    func launchTowards(location:CGPoint, spriteNode:SKSpriteNode) {
         var dx = CGFloat(location.x - position.x)
         var dy = CGFloat(location.y - position.y)
         
@@ -64,7 +54,5 @@ class Hero: SKSpriteNode {
         let vector = CGVector(dx: 100.0 * dx, dy: 100.0 * dy)
         
         spriteNode.physicsBody?.applyImpulse(vector)
-
     }
-    
 }

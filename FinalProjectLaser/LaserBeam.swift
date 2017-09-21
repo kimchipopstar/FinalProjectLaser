@@ -42,10 +42,6 @@ class LaserBeam: SKSpriteNode {
                 self.addChild(smoke)
             }
         
-        
-        
-        
-        
         zPosition = 2
         size.width = 2380
         size.height = 60

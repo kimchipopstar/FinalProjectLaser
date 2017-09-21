@@ -26,7 +26,6 @@ class LaserHubRight: SKSpriteNode {
         setScale(0.27)
         position = CGPoint(x: 320, y: 700)
         physicsBody = SKPhysicsBody(rectangleOf: CGSize.init(width: 40, height: 50), center: CGPoint.init(x: -10, y: -15))
-//        physicsBody = SKPhysicsBody(texture: laserHubTexture, size:size)
         physicsBody?.categoryBitMask = CategoryEnum.laserHubCategory.rawValue
         physicsBody?.collisionBitMask = CategoryEnum.noCategory.rawValue
         physicsBody?.contactTestBitMask = CategoryEnum.projectileCategory.rawValue
@@ -35,8 +34,6 @@ class LaserHubRight: SKSpriteNode {
         
         addChild(laserBeamRight)
     }
-    
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

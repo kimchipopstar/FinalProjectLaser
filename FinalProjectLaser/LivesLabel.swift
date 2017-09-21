@@ -11,7 +11,6 @@ import GameplayKit
 
 class LivesLabel: SKLabelNode {
     
-    
     override init() {
         super.init()
         text = "Lives: 3"
@@ -25,7 +24,6 @@ class LivesLabel: SKLabelNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 

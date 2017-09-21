@@ -16,15 +16,12 @@ class Background: SKSpriteNode {
     func createBackgrounds(scene:SKScene) {
         
         for i in 0...3 {
-            
-        
             let background = SKSpriteNode(imageNamed: "LaserTunnel")
             background.name = "Background"
             background.size = CGSize(width: (scene.scene?.size.width)!, height: 1000)
             background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             background.position = CGPoint(x: 0, y: (CGFloat(i) * background.size.height - 200))
             background.zPosition = 0
-            
             scene.addChild(background)
         }
     }
@@ -33,18 +30,13 @@ class Background: SKSpriteNode {
             self.backgroundSpeed = self.backgroundSpeed * 1.2
     }
     
-    
-    
     func moveBackgrounds(scene:SKScene, hero:Hero) {
-        
         scene.enumerateChildNodes(withName:"Background")
         {
             (node, error) in
-            
             node.position.y -= self.backgroundSpeed
 
-            if node.position.y < -((scene.scene?.size.height)!)
-            {
+            if node.position.y < -((scene.scene?.size.height)!) {
                 node.position.y += ((scene.scene?.size.height)! - 5) * 3
             }
         }

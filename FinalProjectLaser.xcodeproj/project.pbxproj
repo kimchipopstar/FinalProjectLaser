@@ -30,6 +30,13 @@
 		684C91111F71C12600F3A111 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C91101F71C12600F3A111 /* MainMenu.swift */; };
 		684C91141F71E72200F3A111 /* HeroSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 684C91131F71E72200F3A111 /* HeroSmoke.sks */; };
 		684C91161F71E9DA00F3A111 /* HeroFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 684C91151F71E9DA00F3A111 /* HeroFire.sks */; };
+		684C91181F732DC900F3A111 /* HeroShotSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 684C91171F732DC900F3A111 /* HeroShotSound.mp3 */; };
+		684C911A1F734A5100F3A111 /* ProjectileDestruction.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 684C91191F734A5100F3A111 /* ProjectileDestruction.mp3 */; };
+		684C911E1F7357E100F3A111 /* ProjectileBoom2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 684C911D1F7357E100F3A111 /* ProjectileBoom2.mp3 */; };
+		684C91201F73585000F3A111 /* ProjectileBoom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 684C911F1F73585000F3A111 /* ProjectileBoom.mp3 */; };
+		684C91221F73588300F3A111 /* ProjectileBoom3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 684C91211F73588300F3A111 /* ProjectileBoom3.mp3 */; };
+		684C91241F736AB900F3A111 /* BallDestruction.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 684C91231F736AB900F3A111 /* BallDestruction.mp3 */; };
+		684C91261F736B6400F3A111 /* BallDestruction2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 684C91251F736B6400F3A111 /* BallDestruction2.mp3 */; };
 		68775FC81F6A150A00102197 /* LeftLaserSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 68775FC71F6A150A00102197 /* LeftLaserSpark.sks */; };
 		68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 68775FC91F6A19C100102197 /* RightLaserSpark.sks */; };
 		68775FD21F6CA03000102197 /* 37155__volivieri__soccer-ball-hit-ground-02.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68775FD11F6CA03000102197 /* 37155__volivieri__soccer-ball-hit-ground-02.wav */; };
@@ -70,6 +77,13 @@
 		684C91101F71C12600F3A111 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		684C91131F71E72200F3A111 /* HeroSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeroSmoke.sks; sourceTree = "<group>"; };
 		684C91151F71E9DA00F3A111 /* HeroFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeroFire.sks; sourceTree = "<group>"; };
+		684C91171F732DC900F3A111 /* HeroShotSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = HeroShotSound.mp3; sourceTree = "<group>"; };
+		684C91191F734A5100F3A111 /* ProjectileDestruction.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ProjectileDestruction.mp3; sourceTree = "<group>"; };
+		684C911D1F7357E100F3A111 /* ProjectileBoom2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ProjectileBoom2.mp3; sourceTree = "<group>"; };
+		684C911F1F73585000F3A111 /* ProjectileBoom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ProjectileBoom.mp3; sourceTree = "<group>"; };
+		684C91211F73588300F3A111 /* ProjectileBoom3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ProjectileBoom3.mp3; sourceTree = "<group>"; };
+		684C91231F736AB900F3A111 /* BallDestruction.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BallDestruction.mp3; sourceTree = "<group>"; };
+		684C91251F736B6400F3A111 /* BallDestruction2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BallDestruction2.mp3; sourceTree = "<group>"; };
 		68775FC71F6A150A00102197 /* LeftLaserSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LeftLaserSpark.sks; sourceTree = "<group>"; };
 		68775FC91F6A19C100102197 /* RightLaserSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RightLaserSpark.sks; sourceTree = "<group>"; };
 		68775FD11F6CA03000102197 /* 37155__volivieri__soccer-ball-hit-ground-02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "37155__volivieri__soccer-ball-hit-ground-02.wav"; sourceTree = "<group>"; };
@@ -108,8 +122,15 @@
 			children = (
 				4DBDB5CC1F5F676E007014D8 /* FinalProjectLaser */,
 				4DBDB5CB1F5F676E007014D8 /* Products */,
+				684C91171F732DC900F3A111 /* HeroShotSound.mp3 */,
 				68775FD11F6CA03000102197 /* 37155__volivieri__soccer-ball-hit-ground-02.wav */,
+				684C91191F734A5100F3A111 /* ProjectileDestruction.mp3 */,
+				684C91231F736AB900F3A111 /* BallDestruction.mp3 */,
+				684C91251F736B6400F3A111 /* BallDestruction2.mp3 */,
+				684C91211F73588300F3A111 /* ProjectileBoom3.mp3 */,
 				68775FD31F6CA11A00102197 /* ButtonPress.mp3 */,
+				684C911F1F73585000F3A111 /* ProjectileBoom.mp3 */,
+				684C911D1F7357E100F3A111 /* ProjectileBoom2.mp3 */,
 				68775FD61F6CAA7500102197 /* laserPowerDown.wav */,
 			);
 			sourceTree = "<group>";
@@ -132,12 +153,12 @@
 				688566D61F689A93009FB097 /* Background */,
 				4D0C7F011F69E252003C861C /* Score and Lives */,
 				68775FC41F6A096D00102197 /* Particles */,
+				4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */,
 				4DBDB5D51F5F676E007014D8 /* GameViewController.swift */,
 				4DBDB5D11F5F676E007014D8 /* Actions.sks */,
 				4DBDB5D71F5F676E007014D8 /* Main.storyboard */,
 				4DBDB5CD1F5F676E007014D8 /* AppDelegate.swift */,
 				4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */,
-				4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */,
 				4DBDB5DC1F5F676E007014D8 /* LaunchScreen.storyboard */,
 				4DBDB5DF1F5F676E007014D8 /* Info.plist */,
 			);
@@ -285,21 +306,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				684C911E1F7357E100F3A111 /* ProjectileBoom2.mp3 in Resources */,
 				68775FD41F6CA11A00102197 /* ButtonPress.mp3 in Resources */,
 				4DDF1EE61F6B31BE00B84C62 /* ProjectileSpark.sks in Resources */,
 				68775FD21F6CA03000102197 /* 37155__volivieri__soccer-ball-hit-ground-02.wav in Resources */,
 				684C91161F71E9DA00F3A111 /* HeroFire.sks in Resources */,
 				4DDF1EF51F6C4FD500B84C62 /* HeroShootingFire.sks in Resources */,
 				4DDF1EEB1F6B555300B84C62 /* ProjectileFire.sks in Resources */,
+				684C91261F736B6400F3A111 /* BallDestruction2.mp3 in Resources */,
 				4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */,
+				684C91241F736AB900F3A111 /* BallDestruction.mp3 in Resources */,
 				68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */,
 				68775FD71F6CAA7500102197 /* laserPowerDown.wav in Resources */,
 				4DBDB5D01F5F676E007014D8 /* GameScene.sks in Resources */,
 				4DBDB5DB1F5F676E007014D8 /* Assets.xcassets in Resources */,
+				684C91201F73585000F3A111 /* ProjectileBoom.mp3 in Resources */,
 				684C91141F71E72200F3A111 /* HeroSmoke.sks in Resources */,
+				684C91221F73588300F3A111 /* ProjectileBoom3.mp3 in Resources */,
 				4D791CEA1F61505F00656D7B /* Elektronomia - Sky High.mp3 in Resources */,
+				684C91181F732DC900F3A111 /* HeroShotSound.mp3 in Resources */,
 				4DDF1EF11F6B645500B84C62 /* LaserBeamSmoke.sks in Resources */,
 				684C910D1F71C03B00F3A111 /* MainMenu.sks in Resources */,
+				684C911A1F734A5100F3A111 /* ProjectileDestruction.mp3 in Resources */,
 				4DDF1EEF1F6B58A600B84C62 /* LaserBeamFX.sks in Resources */,
 				68775FC81F6A150A00102197 /* LeftLaserSpark.sks in Resources */,
 				4DBDB5DE1F5F676E007014D8 /* LaunchScreen.storyboard in Resources */,

@@ -41,9 +41,7 @@ class LaserBeamRight: SKSpriteNode {
             smoke.isHidden = false
             self.addChild(smoke)
         }
-        
 
-        
         zPosition = 2
         size.width = 2380
         size.height = 60
