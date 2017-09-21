@@ -49,9 +49,11 @@
       "scale" : "3x"
     },
     {
+
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
       "filename" : "LASER IO.png",
+
       "scale" : "1x"
     }
   ],
